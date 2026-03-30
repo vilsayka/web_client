@@ -1,4 +1,36 @@
+# Виртуальное окружение
 .venv/
 venv/
 env/
-env.bak/
+ENV/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Логи и базы данных
+*.log
+*.db
+*.sqlite
+*.sqlite3
+
+# Файлы окружения
+.env
+.env.local
+# Файлы сборки
+dist/
+build/
+*.egg-info/
+
+# OS
+.DS_Store
+Thumbs.db
