@@ -1,7 +1,7 @@
 
 # VibeCore (сборка персональных компьютеров)
 
-![VibeCore](https://ibb.co/XxbTFRYb)
+![VibeCore](image.png)
 
 ## Описание проекта
 
