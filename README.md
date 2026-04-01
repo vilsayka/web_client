@@ -1,7 +1,7 @@
 
 # VibeCore (сборка персональных компьютеров)
 
-![VibeCore](https://media.discordapp.net/attachments/1487866796076699660/1488170818822475786/7bec6102ab22bd5ef047706ce5f6ff1c.png?ex=69cbce94&is=69ca7d14&hm=894390243424f5c66276fc233fabdaeeb0ad9679d6f9dad284ff03972e79acd4&=&format=webp&quality=lossless)
+![VibeCore](https://ibb.co/XxbTFRYb)
 
 ## Описание проекта
 
