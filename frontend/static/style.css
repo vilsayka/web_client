@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+    font-family: "DigitalUpscaledPixel-Regular";
+    src: url("fonts/DigitalUpscaledPixel-Regular.otf") format('truetype');
+}
+
+.text-center {
+    text-align: center;
+    display: flow-root;
+    font-size: 9px;
+    font-family: DigitalUpscaledPixel-Regular, Times New Roman;
+}
+
+.header {
+    background-image: url('image/blue_header.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    display: inline;
+    padding: 4px;
+}
+
+.centered-registration-form {
+    display: inline-block;
+    text-align: left;
+    color: #000FB5;
+    background-color: #ECEBE6;
+    border: 3px solid #B7B8B3;
+    outline: 1px solid black;
+    padding: 15px;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+
+}
+
+.background {
+    min-height: 100vh;
+    background-image: url('image/windows_background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.submit-button {
+    text-align: center;
+}
