@@ -4,37 +4,8 @@ body {
 }
 
 @font-face {
-    font-family: "DigitalUpscaledPixel-Regular";
-    src: url("fonts/DigitalUpscaledPixel-Regular.otf") format('truetype');
-}
-
-.text-center {
-    text-align: center;
-    display: flow-root;
-    font-size: 9px;
-    font-family: DigitalUpscaledPixel-Regular, Times New Roman;
-}
-
-.header {
-    background-image: url('image/blue_header.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white;
-    display: inline;
-    padding: 4px;
-}
-
-.centered-registration-form {
-    display: inline-block;
-    text-align: left;
-    color: #000FB5;
-    background-color: #ECEBE6;
-    border: 3px solid #B7B8B3;
-    outline: 1px solid black;
-    padding: 15px;
-    border-radius: 3px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-
+    font-family: "minecraft_0";
+    src: url("fonts/minecraft_0.ttf") format('truetype');
 }
 
 .background {
@@ -47,4 +18,32 @@ body {
 
 .submit-button {
     text-align: center;
+}
+
+.centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-items: center
+}
+
+.registration-form{
+    color: #000FB5;
+    font-size: 0.75rem;
+}
+
+.big-input {
+  width: 96%;
+  padding: 0.625rem;
+  box-sizing: border-box;
+}
+
+.header {
+    background-image: url('image/blue_header.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    display: inline;
+    padding: 0.45rem;
 }
