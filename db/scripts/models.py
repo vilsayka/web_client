@@ -45,13 +45,13 @@ def read_data_user(username):
     return userdata
 
 
-'''TABLE IMPORTER'''
+'''TABLE IMPORTERS'''
 
 data_importer = {"user_name": "gjhgjgjhgjhg",
         "password_hash": "password4",
         "token": "token",
-        "full_name": "Абв Где Жзи",
-        "telephone": "+79011111111",
+        "full_name": "Абв Где Жи",
+        "telephone": "+7901111111",
         "email": "hui@you.ez"}
 
 def add_importer(userdata):
@@ -72,20 +72,77 @@ def add_importer(userdata):
 
 #add_importer(data_importer)
 
+def update_importer(data_importer):
+    conn = get_db_connection()
+    cur = conn.cursor()
+    
+    sql = "UPDATE importers SET full_name = %s, telephone = %s, email = %s WHERE id_importer = %s"
+    cur.execute(sql, (data_importer["full_name"], data_importer["telephone"], data_importer["email"],data_importer["id_importer"]))
+    
+    conn.commit()
+    cur.close()
+    conn.close()
+
+#update_importer(data_importer)
+
+def read_data_importer():
+    conn = get_db_connection()
+    cur = conn.cursor()
+    with conn.cursor(cursor_factory=DictCursor) as cur:
+        sql = "SELECT * FROM importers"
+        cur.execute(sql)
+        userdata = cur.fetchone()
+        return dict(userdata)
+
+    cur.close()
+    conn.close()
+    return userdata
+
 '''TABLE ORDERS'''
 
-data_order = {"id_customer": "3",
-        "id_importer": "password4",
+data_order = {"id_order": "1",
+        "id_customer": "1",
+        "id_importer": "2",
         "date_order": "token",
-        "date_assembly": "password4",
+        "status_order": "собрана",
         "warranty_period": "34"}
 
 def add_order(userdata):
 
     conn = get_db_connection()
     cur = conn.cursor()
-    sql = "INSERT INTO orders (id_customer, id_importer, date_order, date_assembly, warranty_period) VALUES (%s, %s, %s, %s, %s)"
-    cur.execute(sql, (userdata["user_name"], userdata["password_hash"], userdata["token"]))
+    sql = "INSERT INTO orders (id_customer, id_importer,warranty_period) VALUES (%s, %s, %s)"
+    cur.execute(sql, (userdata["id_customer"], userdata["id_importer"], userdata["warranty_period"]))
     conn.commit()
     cur.close()
     conn.close()
+
+#add_order(data_order)
+
+def read_data_order():
+    conn = get_db_connection()
+    cur = conn.cursor()
+    with conn.cursor(cursor_factory=DictCursor) as cur:
+        sql = "SELECT * FROM orders"
+        cur.execute(sql)
+        userdata = cur.fetchone()
+        return dict(userdata)
+
+    cur.close()
+    conn.close()
+    return userdata
+
+#print(read_data_order())
+
+def update_status_order(data_order):
+    conn = get_db_connection()
+    cur = conn.cursor()
+    
+    sql = "UPDATE orders SET status_order = %s WHERE id_order = %s"
+    cur.execute(sql, (data_order["status_order"], data_order["id_order"]))
+    
+    conn.commit()
+    cur.close()
+    conn.close()
+    
+update_status_order(data_order)

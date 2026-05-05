@@ -12,7 +12,7 @@ CREATE TABLE orders (
     id_order SERIAL PRIMARY KEY,
     id_customer INTEGER REFERENCES users(id_user) NOT NULL,
     id_importer INTEGER REFERENCES importers(id_importer) NOT NULL,
-    date_order DATE NOT NULL,
+    status_order VARCHAR(50) CHECK (status_order IN ('сформирована', 'на сборке', 'собрана')) DEFAULT 'сформирована',
     date_assembly DATE,
     warranty_period INTEGER NOT NULL,
     created_at TIMESTAMP DEFAULT NOW()
@@ -30,7 +30,7 @@ CREATE TABLE components (
     warranty_period INTEGER DEFAULT 0,
     price_complete DECIMAL(10, 2) NOT NULL,
     quantity_accessories INTEGER DEFAULT 0,
-    code_image BYTEA,
+    image_path TEXT,
     created_at TIMESTAMP DEFAULT NOW()
 );
 
@@ -46,6 +46,19 @@ CREATE TABLE component_specs (
 );
 
 CREATE INDEX idx_component_specs_specifications ON component_specs USING GIN (specifications);
+
+CREATE OR REPLACE FUNCTION update_modified_column()
+RETURNS TRIGGER AS $$
+BEGIN
+    NEW.updated_at = now();
+    RETURN NEW;
+END;
+$$ language plpgsql;
+
+CREATE TRIGGER update_your_table_modtime
+    BEFORE UPDATE ON component_specs
+    FOR EACH ROW 
+    EXECUTE FUNCTION update_modified_column();
 
 CREATE TABLE service_guarantees (
     id_repair_warranty SERIAL PRIMARY KEY,
