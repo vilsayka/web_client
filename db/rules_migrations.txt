@@ -8,5 +8,6 @@
 6. если всё прошло удачто пишем: CREATE DATABASE vibecore;
 7. далее заходим по пути репозитория db/migrations/1_create_table_users.sql и в консоли vs code пишем 
    команду: & "C:\Program Files\PostgreSQL\18\bin\psql.exe" -h localhost -U postgres -d vibecore -f D:\web_client\db\migrations\1_create_table_users.sql 
+            & "C:\Program Files\PostgreSQL\18\bin\psql.exe" -h localhost -U postgres -d vibecore -f D:\web_client\db\migrations\2_create_all_tables.sql  
    (если путь другой, то поменяйте или попробуйте использовать "psql" в место него)
 8. а вообще лучше сразу в дс идти, просто для справки написал, чтобы самому не забыть.

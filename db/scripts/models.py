@@ -4,15 +4,14 @@ from psycopg2.extras import DictCursor
 '''TABLE USERS'''
 
 data_user = {"user_name": "kjhk",
-        "password_hash": "password4",
-        "token": "token"}
-
+        "password_hash": "password4"
+        }
 def add_user(userdata):
 
     conn = get_db_connection()
     cur = conn.cursor()
-    sql = "INSERT INTO users (user_name, password_hash, token) VALUES (%s, %s, %s)"
-    cur.execute(sql, (userdata["user_name"], userdata["password_hash"], userdata["token"]))
+    sql = "INSERT INTO users (user_name, password_hash) VALUES (%s, %s)"
+    cur.execute(sql, (userdata["user_name"], userdata["password_hash"]))
     conn.commit()
     cur.close()
     conn.close()
@@ -43,7 +42,6 @@ def read_data_user(username):
     cur.close()
     conn.close()
     return userdata
-
 
 '''TABLE IMPORTERS'''
 
@@ -104,15 +102,15 @@ data_order = {"id_order": "1",
         "id_customer": "1",
         "id_importer": "2",
         "date_order": "token",
-        "status_order": "собрана",
+        "status_order": "сформирована",
         "warranty_period": "34"}
 
 def add_order(userdata):
 
     conn = get_db_connection()
     cur = conn.cursor()
-    sql = "INSERT INTO orders (id_customer, id_importer,warranty_period) VALUES (%s, %s, %s)"
-    cur.execute(sql, (userdata["id_customer"], userdata["id_importer"], userdata["warranty_period"]))
+    sql = "INSERT INTO orders (id_customer, id_importer, warranty_period, status_order) VALUES (%s, %s, %s, %s)"
+    cur.execute(sql, (userdata["id_customer"], userdata["id_importer"], userdata["warranty_period"], "сформирована"))
     conn.commit()
     cur.close()
     conn.close()
@@ -145,4 +143,39 @@ def update_status_order(data_order):
     cur.close()
     conn.close()
     
-update_status_order(data_order)
+#update_status_order(data_order)
+
+'''TABLE SERVICE_GUARANTEES'''
+
+data_service_guarantees = {
+        "id_repair_warranty": "2",
+        "id_order": "1",
+        "id_defective_component": "1",
+        "Problem_description": "всё хуйня",
+        "status_order": 'rejected',
+        }
+
+def add_service_guarantees(userdata):
+
+    conn = get_db_connection()
+    cur = conn.cursor()
+    sql = "INSERT INTO service_guarantees (id_order, id_defective_component, Problem_description) VALUES (%s, %s, %s)"
+    cur.execute(sql, (userdata["id_order"], userdata["id_defective_component"], userdata["Problem_description"]))
+    conn.commit()
+    cur.close()
+    conn.close()
+
+add_service_guarantees(data_service_guarantees)
+
+def update_status_service_guarantees(data_order):
+    conn = get_db_connection()
+    cur = conn.cursor()
+    
+    sql = "UPDATE service_guarantees SET status_repair = %s WHERE id_repair_warranty = %s"
+    cur.execute(sql, (data_order["status_order"], data_order["id_repair_warranty"]))
+    
+    conn.commit()
+    cur.close()
+    conn.close()
+    
+#update_status_service_guarantees(data_service_guarantees)

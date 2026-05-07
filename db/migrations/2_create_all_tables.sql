@@ -12,7 +12,7 @@ CREATE TABLE orders (
     id_order SERIAL PRIMARY KEY,
     id_customer INTEGER REFERENCES users(id_user) NOT NULL,
     id_importer INTEGER REFERENCES importers(id_importer) NOT NULL,
-    status_order VARCHAR(50) CHECK (status_order IN ('сформирована', 'на сборке', 'собрана')) DEFAULT 'сформирована',
+    status_order VARCHAR(100) NOT NULL,
     date_assembly DATE,
     warranty_period INTEGER NOT NULL,
     created_at TIMESTAMP DEFAULT NOW()
@@ -20,7 +20,7 @@ CREATE TABLE orders (
 
 CREATE INDEX idx_orders_id_customer ON orders(id_customer);
 CREATE INDEX idx_orders_id_importer ON orders(id_importer);
-CREATE INDEX idx_orders_date_order ON orders(date_order);
+CREATE INDEX idx_orders_status_importer ON orders(status_order);
 
 CREATE TABLE components (
     id_component SERIAL PRIMARY KEY,
@@ -64,15 +64,15 @@ CREATE TABLE service_guarantees (
     id_repair_warranty SERIAL PRIMARY KEY,
     id_order INTEGER REFERENCES orders(id_order) NOT NULL,
     id_defective_component INTEGER NOT NULL,
-    date_references DATE,
+    date_references DATE DEFAULT NOW(),
     date_repair_completion DATE,
     Problem_description VARCHAR(300) NOT NULL,
-    status_order VARCHAR(50) NOT NULL,
+    status_repair VARCHAR(100) CHECK (status_repair IN ('under consideration', 'rejected', 'accepted', 'closed')) DEFAULT 'under consideration',
     created_at TIMESTAMP DEFAULT NOW()
 );
 
 CREATE INDEX idx_guarantees_id_order ON service_guarantees(id_order); 
-CREATE INDEX idx_guarantees_status ON service_guarantees(status_order);
+CREATE INDEX idx_guarantees_status ON service_guarantees(status_repair);
 
 CREATE TABLE pc_composition (
     id_entry SERIAL PRIMARY KEY,
