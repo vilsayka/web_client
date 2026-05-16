@@ -99,7 +99,6 @@
     position: fixed;
     top: 90px;
     right: 170px;
-    z-index: 1000;
 }
 
 @media (max-width: 768px) {
