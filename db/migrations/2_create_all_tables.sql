@@ -30,33 +30,27 @@ CREATE TABLE components (
     warranty_period INTEGER DEFAULT 0,
     price_complete DECIMAL(10, 2) NOT NULL,
     quantity_accessories INTEGER DEFAULT 0,
-    image_path TEXT,
-    created_at TIMESTAMP DEFAULT NOW()
+    specifications JSONB NOT NULL DEFAULT '{}'::jsonb,
+    created_at TIMESTAMP DEFAULT NOW(),
+    updated_at TIMESTAMP DEFAULT NOW()
 );
 
 CREATE INDEX idx_components_manufacturer ON components(manufacturer);  
 CREATE INDEX idx_components_model ON components(model);        
 CREATE INDEX idx_components_price ON components(price_complete);
 
-CREATE TABLE component_specs (
-    id_spec SERIAL PRIMARY KEY,
-    id_component INTEGER UNIQUE REFERENCES components(id_component) ON DELETE CASCADE,
-    specifications JSONB NOT NULL DEFAULT '{}'::jsonb,
-    updated_at TIMESTAMP DEFAULT NOW()
-);
-
-CREATE INDEX idx_component_specs_specifications ON component_specs USING GIN (specifications);
+CREATE INDEX idx_components_specifications ON components USING GIN (specifications);
 
 CREATE OR REPLACE FUNCTION update_modified_column()
 RETURNS TRIGGER AS $$
 BEGIN
-    NEW.updated_at = now();
+    NEW.updated_at = NOW();
     RETURN NEW;
 END;
-$$ language plpgsql;
+$$ LANGUAGE plpgsql;
 
-CREATE TRIGGER update_your_table_modtime
-    BEFORE UPDATE ON component_specs
+CREATE TRIGGER update_components_modtime
+    BEFORE UPDATE ON components
     FOR EACH ROW 
     EXECUTE FUNCTION update_modified_column();
 
