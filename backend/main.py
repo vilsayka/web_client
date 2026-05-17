@@ -1,17 +1,17 @@
 from fastapi import FastAPI
+from app.api.v1.routers import api_router
+from fastapi.middleware.cors import CORSMiddleware
 
-app = FastAPI(title="NexGen Build API")
-data: dict[str,str] = {}
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
+app = FastAPI(title="Vibecore API")
 
-@app.get("/health")
-async def health():
-    return {"status": "ok"}
+# Разрешаем запросы с фронтенда (потом укажешь точный адрес)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Для разработки можно разрешить все источники
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
-@app.post('/register')
-async def register(login:str,password:str):
-    data[login] = password
-    print(data)
-    return data
+# Подключаем основной роутер (все эндпоинты внутри)
+app.include_router(api_router, prefix="/api/v1")
