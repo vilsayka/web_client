@@ -1,5 +1,15 @@
 from pydantic import BaseModel, Field, field_validator
 from typing import Optional
+from datetime import datetime
+
+
+class UserUpdateResponse(BaseModel):
+    access_token: str
+    token_type: str = "bearer"
+    username: str
+    user_role: str
+    created_at: Optional[datetime] = None
+
 
 class UserCreate(BaseModel):
     username: str = Field(..., min_length=3, max_length=20)
@@ -53,4 +63,14 @@ class Token(BaseModel):
     token_type: str = "bearer"
 
 
-    
+class UserUpdate(BaseModel):
+    new_username: str = Field(..., min_length=3, max_length=20)
+
+
+
+class UserUpdateResponse(BaseModel):
+    access_token: str
+    token_type: str = "bearer"
+    username: str
+    user_role: str
+    created_at: Optional[datetime] = None
