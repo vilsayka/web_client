@@ -4,26 +4,26 @@ from typing import Optional
 
 
 def get_user(conn, username: str) -> Optional[dict]:
-    try:
-        with conn.cursor() as cur:
-            cur.execute(
-                "SELECT id_user, user_name, password_hash, is_active, user_role, created_at "
-            "FROM users WHERE user_name = %s",
-                (username,)
-            )
-            row = cur.fetchone()
-            if row:
-                 return {
-                "id_user": row[0],
-                "user_name": row[1],
-                "password_hash": row[2],
-                "is_active": row[3],
-                "user_role": row[4],
-                "created_at": row[5]
-            }
-            return None
-    finally:
-        conn.close()
+    #try:
+    with conn.cursor() as cur:
+        cur.execute(
+            "SELECT id_user, user_name, password_hash, is_active, user_role, created_at "
+        "FROM users WHERE user_name = %s",
+            (username,)
+        )
+        row = cur.fetchone()
+        if row:
+                return {
+            "id_user": row[0],
+            "user_name": row[1],
+            "password_hash": row[2],
+            "is_active": row[3],
+            "user_role": row[4],
+            "created_at": row[5]
+        }
+        return None
+    #finally:
+        #conn.close()
 
 
 def create_user(conn, username: str, hashed_password: str) -> None:

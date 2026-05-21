@@ -1,12 +1,14 @@
 from datetime import datetime, timedelta, timezone
 import jwt
+from fastapi.security import HTTPBearer
 
-from fastapi.security import OAuth2PasswordBearer
+
+#from fastapi.security import OAuth2PasswordBearer
 from config import SECRET_KEY, ALGORITHM, ACCESS_TOKEN_EXPIRE_MINUTES
 import bcrypt
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/v1/login")
-
+#oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/v1/login")
+oauth2_scheme = HTTPBearer()
 
 # def hash_password(password: str) -> str:
 #     return pwd_context.hash(password)
