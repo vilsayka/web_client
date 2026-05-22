@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Регистрация</title>
+    <title>Вход</title>
     <link rel="icon" href="static/image/logo_mini.png" type="image/png">
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="stylesheet" href="/static/css/reg-and-login.css">
@@ -11,20 +11,20 @@
 <body>
     <div class="background" >
     <div class="centered">
-        <h3><b class="header-reg">Регистрация</b></h3>
+        <h3><b class="header-login">Вход</b></h3>
 
         <div class="window" style="width: 300px">
         <div class="title-bar">
-            <div class="title-bar-text">Окно регистрации</div>
+            <div class="title-bar-text">Окно входа</div>
         </div>
         <div class="registration-form window-body">
-            <form id="reg-form">
+            <form id="login-form">
             Логин:<br>
             <input class="big-input" type="text" name="username" id="username" minlength="3" required> <br>
             <p>Пароль:<br>
             <input class="big-input" type="password" name="password" id="password" minlength="6" required><br></p>
             <div class="container-button">
-                <a href="/login" class="register-login-button" id="login-button">Войти</a>
+                <a href="/registration" class="register-login-button" id="register">Зарегистрироваться</a>
                 <button type="submit" class="register-login-button">Отправить</button>
             </div>
             </form>
@@ -32,7 +32,6 @@
         </div>
     </div>
     </div>
-
-    <script src="static/js/registration.js"></script>
+    <script src="static/js/login.js"></script>
 </body>
 </html>

@@ -1,0 +1,64 @@
+.container-button {
+    text-align: center;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-items: center
+}
+
+.registration-form{
+    color: #000FB5;
+    font-size: 12px;
+}
+
+.big-input {
+    width: 96%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.header-reg {
+    background-image: url('../image/blue_header.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    display: inline;
+    padding: 7px;
+}
+
+.header-login {
+    background-image: url('../image/blue-header-mini.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    display: inline;
+    padding: 10px;
+}
+
+.register-login-button {
+    background: #c0c0c0;
+    color: #000 !important;
+    text-decoration: none;
+    padding: 6px 12px;
+    font-weight: normal;
+    font-size: 12px;
+    border: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    transition: all 0.05s linear;
+}
+
+.register-login-button:hover {
+    background: #d4d0c8;
+    border-color: #ffffff #808080 #808080 #ffffff;
+}
+
+.register-login-button:active {
+    border-color: #808080 #ffffff #ffffff #808080;
+}
