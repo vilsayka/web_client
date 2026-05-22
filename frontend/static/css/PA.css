@@ -1,0 +1,128 @@
+.windows-container {
+    display: flex;
+    max-width: 700px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 30px 20px;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 10px;
+}
+
+.profile-image {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+
+}
+
+.profile-username {
+    font-family: "Trebuchet MS";
+    font-size: 22px;
+    font-weight: bold;
+    color: #0006AE;
+    margin: 0;
+}
+
+.profile-role {
+    font-family: "Trebuchet MS";
+    font-size: 20px;
+    color: #333;
+    margin: 0;
+    display: inline-block;
+    width: fit-content;
+}
+
+.profile-extra {
+    font-family: "Trebuchet MS";
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+  .banner {
+    height: auto;
+    max-width: 740px;
+    padding: 0.3rem;
+  }
+
+  .btn {
+    padding: 6px 15px;
+    font-size: 12px;
+  }
+
+  .logo {
+    height: 45px;
+  }
+
+  .buttons {
+    gap: 10px;
+  }
+
+  .profile-image {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner {
+    max-width: 450px;
+    padding: 0.4rem;
+  }
+
+  .banner-content {
+    gap: 12px;
+  }
+
+  .btn {
+    padding: 4px 10px;
+    font-size: 12px;
+  }
+
+  .logo {
+    height: 45px;
+  }
+
+  .buttons {
+    gap: 8px;
+  }
+
+  .profile-image {
+    display: none;
+  }
+
+  .profile-username {
+    font-size: 20px;
+   }
+
+  .profile-role {
+    font-size: 18px;
+  }
+
+  .profile-extra {
+    font-size: 14px;
+  }
+
+   .window {
+    width: 450px !important;
+  }
+}
