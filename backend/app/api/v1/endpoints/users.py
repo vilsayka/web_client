@@ -21,7 +21,8 @@ def change_my_username(
     updated = update_username(conn, current_user["username"], user_update.new_username)
     new_token = create_access_token(
         username=updated["user_name"],
-        user_role=updated["user_role"]
+        user_role=updated["user_role"],
+        user_id=updated["id_user"]
     )
     return UserUpdateResponse(
         access_token=new_token,

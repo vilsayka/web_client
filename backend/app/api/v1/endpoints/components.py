@@ -8,7 +8,6 @@ router = APIRouter()
 @router.get("/")
 def list_components(category: str = Query(None), conn = Depends(get_db_slave)):
     if category:
-        # Если запросили конкретную категорию, вернём только её (на будущее)
         return get_components_by_category(conn, category)
     else:
         # Без параметра – возвращаем всё, сгруппированное для фронта

@@ -71,7 +71,4 @@ def perform_compatibility_check(components: list[dict]) -> list[str]:
         psu_watt = cats["psu"]["specifications"].get("wattage", 0)
         if total_tdp > psu_watt * 0.8:  # запас 20%
             conflicts.append(f"Блок питания ({psu_watt}W) недостаточен для потребления {total_tdp}W")
-
-    # Можно добавить другие проверки по аналогии
-
     return conflicts

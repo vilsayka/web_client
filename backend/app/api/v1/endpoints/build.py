@@ -10,7 +10,7 @@ router = APIRouter()
 
 @router.post("/check", response_model=CompatibilityResponse)
 def check_compatibility(request: CompatibilityRequest, conn = Depends(get_db_slave)):
-    # Загрузим все компоненты по их id
+    # Загружаем все компоненты по их id
     components = []
     for cid in request.component_ids:
         comp = get_component(conn, cid)

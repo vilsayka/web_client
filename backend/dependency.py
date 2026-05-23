@@ -45,6 +45,7 @@ def get_db_slave():
 #     if user is None:
 #         raise credentials_exception
 #     return user
+
 def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(oauth2_scheme)) -> dict:
     """Извлекает токен, проверяет его и возвращает пользователя из payload."""
     token = credentials.credentials  # получаем строку токена
@@ -56,16 +57,13 @@ def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(oauth2_
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
         username: str = payload.get("sub")
-        role: str = payload.get("user_role")  # обрати внимание: поле называется user_role
+        role: str = payload.get("user_role")
+        user_id: int = payload.get("user_id")  
         if username is None or role is None:
             raise credentials_exception
     except JWTError:
         raise credentials_exception
-
-    # Дополнительно можно проверить существование пользователя в БД (опционально)
-    # conn = get_db_slave() ... но здесь нет доступа к conn, поэтому можно либо оставить только проверку токена,
-    # либо переделать на получение conn. Для быстрого исправления просто вернём данные из токена.
-    return {"username": username, "role": role}
+    return {"username": username, "role": role, "user_id" : user_id}
 
 
 def require_role(*allowed_roles: str):

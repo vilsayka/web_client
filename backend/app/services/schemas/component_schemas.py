@@ -15,4 +15,3 @@ class ComponentPublic(BaseModel):
     name: str
     description: str
     price: float
-    # при желании можно добавить дополнительные поля, но для выбора хватит этих

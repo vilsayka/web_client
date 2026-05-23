@@ -8,22 +8,20 @@ from app.pages import pages_router
 
 app = FastAPI(title="Vibecore API")
 
-# Разрешаем запросы с фронтенда (потом укажешь точный адрес)
+# Разрешаем запросы с фронтенда 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Для разработки можно разрешить все источники
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Подключаем основной роутер (все эндпоинты внутри)
+
 app.include_router(api_router, prefix="/api/v1")
 @app.get("/main")
 async def root():
     return FileResponse("../frontend/templates/main.html")
-
-app.include_router(api_router, prefix="/api/v1")
 
 
 app.mount("/static", StaticFiles(directory="../frontend/static"), name="static")

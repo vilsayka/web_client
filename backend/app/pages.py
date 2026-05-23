@@ -24,11 +24,22 @@ async def pc_assembly():
 
 
 @pages_router.get("/main_user")
-async def pc_assembly():
+async def main_user():
     return FileResponse("../frontend/templates/main-user.html")
 
 
 @pages_router.get("/personal_account")
-async def pc_assembly():
+async def personal_account():
     return FileResponse("../frontend/templates/personal_account.html")
 
+@pages_router.get("/orders")
+async def orders_page():
+    return FileResponse("../frontend/templates/orders.html")
+
+@pages_router.get("/order_detail")
+async def order_detail_page():
+    return FileResponse("../frontend/templates/order_detail.html")
+
+@pages_router.get("/available_orders")
+async def available_orders_page():
+    return FileResponse("../frontend/templates/available_orders.html")

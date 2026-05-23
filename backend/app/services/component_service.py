@@ -10,7 +10,7 @@ CATEGORY_MAP = {
     "Видеокарта": "Graphics Card",
     "Охлаждение процессора": "CPU Cooler",
     "Оперативная память": "RAM",
-    "Накопители": "Storage"      # множественное число из HTML
+    "Накопители": "Storage"      
 }
 
 def get_component(conn, component_id: int):
@@ -27,11 +27,8 @@ def get_components_by_category(conn, russian_category: str):
     # Преобразуем в формат для фронта
     result = []
     for c in components:
-        # name = производитель + модель, description можно взять из характеристик
         name = f"{c['manufacturer']} {c['model']}"
-        # пример простого описания: тип и пара ключевых параметров
         desc = f"{c['title']}"
-        # если есть socket, добавляем его
         if c['specifications'].get('socket'):
             desc += f", сокет {c['specifications']['socket']}"
         if c['specifications'].get('cores'):
