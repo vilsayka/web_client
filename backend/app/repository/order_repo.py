@@ -53,3 +53,10 @@ def update_order_status(conn, order_id: int, new_status: str, importer_id: int) 
         updated = cur.rowcount
     conn.commit()
     return updated > 0
+
+
+def get_orders_stats(conn):
+    with conn.cursor() as cur:
+        cur.execute("SELECT status_order, COUNT(*) FROM orders GROUP BY status_order")
+        rows = cur.fetchall()
+        return [{"status": r[0], "count": r[1]} for r in rows]

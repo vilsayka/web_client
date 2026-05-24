@@ -9,7 +9,11 @@ from app.services.schemas.user_schemas import Token, UserCreate, UserPublic
 from app.core.security import create_access_token
 from app.services.user_service import authenticate, register
 from dependency import get_db_master, get_db_slave
-    
+from fastapi.security import HTTPAuthorizationCredentials
+from jose import JWTError
+import jwt
+from app.core.security import oauth2_scheme, SECRET_KEY, ALGORITHM
+
 router = APIRouter()
 
 
@@ -32,3 +36,19 @@ def login(form_data: OAuth2PasswordRequestForm = Depends(),
 def register_user(user_in: UserCreate, conn = Depends(get_db_master)): #response_model - то что возвращается в ответе
     new_user = register(conn, user_in.username, user_in.password)
     return UserPublic(username=new_user["username"], user_role=new_user["user_role"])
+
+
+@router.post("/refresh")
+async def refresh_token(credentials: HTTPAuthorizationCredentials = Depends(oauth2_scheme)):
+    token = credentials.credentials
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        username = payload.get("sub")
+        role = payload.get("user_role")
+        user_id = payload.get("user_id")
+        if not all([username, role, user_id]):
+            raise HTTPException(status_code=401)
+    except JWTError:
+        raise HTTPException(status_code=401, detail="Invalid token")
+    new_token = create_access_token(username=username, user_role=role, user_id=user_id)
+    return {"access_token": new_token, "token_type": "bearer"}

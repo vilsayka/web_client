@@ -4,7 +4,7 @@ from fastapi import HTTPException
 from psycopg2 import errors
 
 from app.core.security import hash_password, verify_password
-from app.repository.user_repo import create_user, get_user, update_user
+from app.repository.user_repo import create_user, get_user, get_users_by_role, update_user
 from app.repository.importer_repo import get_importer
 
 
@@ -55,3 +55,7 @@ def get_user_profile(conn, username: str, role: str) -> dict:
     # для customer/admin ничего дополнительного не добавляем
 
     return profile
+
+
+def get_user_stats(conn):
+    return get_users_by_role(conn)

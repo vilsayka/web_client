@@ -1,17 +1,6 @@
-# from psycopg2.extras import Json
-# from typing import Optional, List
-
-
-# def create_component(conn, data: dict) -> dict:
-#     with conn.cursor() as cur:
-#         cur.execute(
-#             """INSERT INTO components (title, manifacturer, model, warranty_period, price_complete, quantity_accessories, specifications)
-#             VALUES = """
-#         )
-
-import psycopg2
 from psycopg2.extras import Json
 from typing import Optional, List
+
 
 def create_component(conn, data: dict) -> dict:
     with conn.cursor() as cur:
@@ -35,6 +24,7 @@ def create_component(conn, data: dict) -> dict:
         **data
     }
 
+
 def get_component(conn, component_id: int) -> Optional[dict]:
     with conn.cursor() as cur:
         cur.execute(
@@ -57,6 +47,7 @@ def get_component(conn, component_id: int) -> Optional[dict]:
                 "updated_at": row[9]
             }
     return None
+
 
 def get_components_by_title(conn, title: str) -> List[dict]:
     """Получить все компоненты с указанным title (например 'Processor')."""

@@ -62,3 +62,10 @@ def update_user(conn, current_username: str, new_username: str) -> Optional[dict
         return None
     finally:
         conn.close()
+
+
+def get_users_by_role(conn):
+    with conn.cursor() as cur:
+        cur.execute("SELECT user_role, COUNT(*) FROM users GROUP BY user_role")
+        rows = cur.fetchall()
+        return [{"role": r[0], "count": r[1]} for r in rows]
