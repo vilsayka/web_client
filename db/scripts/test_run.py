@@ -15,7 +15,7 @@ def load_components_to_db(json_file):
         components = data['components'][category]
         for comp in components:
             cur.execute("""
-                INSERT INTO components (title, manufacturer, model, warranty_period, price_complete, quantity_accessories, specifications VALUES (%s, %s, %s, %s, %s, %s, %s)""", (
+                INSERT INTO components (title, manufacturer, model, warranty_period, price_complete, quantity_accessories, specifications) VALUES (%s, %s, %s, %s, %s, %s, %s)""", (
                 comp['title'],
                 comp['manufacturer'],
                 comp['model'],
