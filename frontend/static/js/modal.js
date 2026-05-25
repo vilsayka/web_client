@@ -66,43 +66,70 @@ function selectComponent(category, id, name) {
 }
 
 async function submitBuild() {
-    const componentsCount = Object.keys(selectedComponents).length;
-    if (componentsCount < 8) {
-        alert(`Выбрано компонентов: ${componentsCount} из 8. Выберите все компоненты!`);
+    const token = localStorage.getItem('token');
+    if (!token) {
+        alert('Вы не авторизованы. Войдите в систему.');
+        window.location.href = '/login';
         return;
     }
 
-    const missingComponents = requiredComponents.filter(comp => !selectedComponents[comp]);
-
-    if (missingComponents.length > 0) {
-        alert('Выберите все компоненты:\n' + missingComponents.join('\n'));
+    const componentsCount = Object.keys(selectedComponents).length;
+    if (componentsCount < requiredComponents.length) {
+        alert(`Выбрано компонентов: ${componentsCount} из ${requiredComponents.length}. Выберите все компоненты!`);
         return;
     }
 
     const componentIds = Object.values(selectedComponents).map(comp => comp.id);
 
     try {
-        const response = await fetch('/api/v1/build/check', {
+        // 1. Проверка совместимости
+        const checkRes = await fetch('/api/v1/build/check', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ component_ids: componentIds })
         });
 
-        if (!response.ok) {
-            throw new Error('Ошибка сервера');
+        if (!checkRes.ok) {
+            throw new Error('Ошибка проверки совместимости');
         }
 
-        const result = await response.json();
+        const checkResult = await checkRes.json();
 
-        if (result.compatible) {
-            alert('Конфигурация совместима! Заказ создан.');
-
-        } else {
-            alert('Найдены конфликты:\n\n' + result.conflicts.join('\n'));
+        if (!checkResult.compatible) {
+            alert('Найдены конфликты:\n\n' + checkResult.conflicts.join('\n'));
+            return;
         }
+
+        // 2. Подтверждение создания заказа
+        if (!confirm('Конфигурация совместима! Создать заказ?')) {
+            return;
+        }
+
+        // 3. Создание заказа
+        const createRes = await fetch('/api/v1/orders/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                component_ids: componentIds,
+                warranty_period: 12
+            })
+        });
+
+        if (!createRes.ok) {
+            const err = await createRes.json();
+            throw new Error(err.detail || 'Не удалось создать заказ');
+        }
+
+        const order = await createRes.json();
+        alert(`Заказ №${order.id_order} успешно создан!`);
+        window.location.href = `/order_detail?id=${order.id_order}`;  // переход на детали заказа
+
     } catch (error) {
-        console.error('Ошибка при проверке сборки:', error);
-        alert('Произошла ошибка при проверке конфигурации. Попробуйте позже.');
+        console.error('Ошибка при создании заказа:', error);
+        alert(error.message || 'Произошла ошибка');
     }
 }
 

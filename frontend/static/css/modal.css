@@ -63,3 +63,10 @@
     padding: 20px;
     text-align: center;
 }
+
+.selected-component {
+    display: block;
+    color: #808080;
+    font-size: 13px;
+    margin-top: 3px;
+}

@@ -1,0 +1,33 @@
+.guarantee-card {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 12px;
+    margin-bottom: 8px;
+}
+.status-under_consideration {
+    color: orange;
+
+}
+.status-rejected {
+    color: red;
+
+}
+.status-accepted {
+    color: blue;
+}
+
+.status-closed {
+    color: green;
+}
+
+@media (max-width: 768px) {
+    .window {
+        width: 750px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .window {
+        width: 450px !important;
+    }
+}

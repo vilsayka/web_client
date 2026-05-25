@@ -1,0 +1,67 @@
+.order-card {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 12px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.component-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+.component-table th, .component-table td {
+    border: 1px solid #cccccc;
+    padding: 8px;
+    text-align: left;
+}
+
+.actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.orders-container {
+    padding: 20px;
+}
+
+.order-card {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.order-status {
+    font-weight: bold;
+}
+
+.order-actions {
+    display: flex;
+    gap: 10px;
+}
+
+@media (max-width: 768px) {
+    .window {
+        width: 750px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .window {
+        width: 450px !important;
+    }
+}

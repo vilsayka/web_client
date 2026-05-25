@@ -49,16 +49,21 @@ body {
   gap: 15px;
 }
 
+
 .btn {
+  background: #012ee2;
   padding: 8px 20px;
-  background-color: #0831D9;
-  color: white;
+  color: #fff;
   text-decoration: none;
   border-radius: 5px;
   font-size: 14px;
   font-family: Trebuchet MS;
   transition: all 0.3s ease;
   border: 1px solid #fff;
+  display: inline-flex;          
+  align-items: center;           
+  justify-content: center;       
+  line-height: 1.2;             
 }
 
 .btn:hover {
@@ -70,3 +75,64 @@ body {
 .btn:active {
   transform: translateY(0);
 }
+
+.windows-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 30px 20px;
+    max-width: 1290px;
+    margin: 0 auto;
+}
+
+.chart-container {
+    width: 400px;
+    margin: 20px auto;
+}
+
+@media (max-width: 768px) {
+  .banner {
+    height: auto;
+    max-width: 740px;
+    padding: 0.3rem;
+  }
+
+  .btn {
+    padding: 6px 15px;
+    font-size: 12px;
+  }
+
+  .logo {
+    height: 45px;
+  }
+
+  .buttons {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner {
+    max-width: 450px;
+    padding: 0.4rem;
+  }
+
+  .banner-content {
+    gap: 12px;
+  }
+
+  .btn {
+    padding: 4px 10px;
+    font-size: 12px;
+  }
+
+  .logo {
+    height: 45px;
+  }
+
+  .buttons {
+    gap: 8px;
+  }
+}
+

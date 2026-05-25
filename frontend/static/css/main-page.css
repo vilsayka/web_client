@@ -27,24 +27,6 @@
 }
 
 @media (max-width: 768px) {
-  .banner {
-    height: auto;
-    max-width: 740px;
-    padding: 0.3rem;
-  }
-
-  .btn {
-    padding: 6px 15px;
-    font-size: 12px;
-  }
-
-  .logo {
-    height: 45px;
-  }
-
-  .buttons {
-    gap: 10px;
-  }
 
   .window {
     width: 750px !important;
@@ -85,28 +67,6 @@
 }
 
 @media (max-width: 480px) {
-  .banner {
-    max-width: 450px;
-    padding: 0.4rem;
-  }
-
-  .banner-content {
-    gap: 12px;
-  }
-
-  .btn {
-    padding: 4px 10px;
-    font-size: 12px;
-  }
-
-  .logo {
-    height: 45px;
-  }
-
-  .buttons {
-    gap: 8px;
-  }
-
   .windows-container {
     gap: 12px;
     padding: 25px 10px;

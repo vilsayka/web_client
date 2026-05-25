@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Доступные заказы</title>
+    <link rel="icon" href="/static/image/logo_mini.png" type="image/png">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/order.css">
+    <link rel="stylesheet" href="https://unpkg.com/xp.css">
+</head>
+<body>
+    <div class="background">
+        <div class="banner">
+            <div class="banner-content">
+                <div class="logo"><img src="/static/image/logo.png"></div>
+                <div class="buttons">
+                    <a href="/pc_assembly" class="btn">Собрать ПК</a>
+                    <a href="/orders" class="btn">Мои заказы</a>
+                    <a href="/personal_account" class="btn">Личный кабинет</a>
+                </div>
+            </div>
+        </div>
+        <div class="windows-container">
+            <div class="window" style="width: 900px">
+                <div class="title-bar"><div class="title-bar-text">Доступные заказы</div></div>
+                <div class="window-body" id="availableOrdersContainer">Загрузка...</div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/js/utils.js"></script>
+    <script src="/static/js/available_orders.js"></script>
+</body>
+</html> 

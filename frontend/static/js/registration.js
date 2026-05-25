@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (response.ok) {
                 const data = await response.json();
                 alert('Регистрация успешна! Теперь войдите под своим логином.');
-                window.location.href = '/main-user';
+                window.location.href = '/main_user';
             } else {
                 const error = await response.json();
                 alert('Ошибка: ' + (error.detail || 'Неизвестная ошибка'));
