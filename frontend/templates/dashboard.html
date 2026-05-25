@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Дашборд</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/xp.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <div class="background">
+        <div class="banner">
+            <div class="banner-content">
+                <div class="logo"><img src="/static/image/logo.png"></div>
+                <div class="buttons">
+                    <a href="/pc_assembly" class="btn">Собрать ПК</a>
+                    <a href="/orders" class="btn">Мои заказы</a>
+                    <a href="/personal_account" class="btn">Личный кабинет</a>
+                </div>
+            </div>
+        </div>
+        <div class="windows-container">
+            <div class="window" style="width: 900px">
+                <div class="title-bar"><div class="title-bar-text">Аналитика</div></div>
+                <div class="window-body">
+                    <div class="chart-container">
+                        <canvas id="ordersChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="usersChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/js/dashboard.js"></script>
+</body>
+</html>
