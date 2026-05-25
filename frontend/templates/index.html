@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {% block link %}{% endblock %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="icon" type="image/svg+xml" href="../../../frontend/static/image/logo_mini.png">
+    <title>{% block new_page %}{% endblock %}</title>
+</head>
+<body>
+    <div class="header">
+        <div class="main-header">
+            <div class="main-logo">
+                <img class="logo-website" src= "/static/image/logo.png" alt="logo">
+            </div>
+            <div class="admin">
+                Администратор
+            </div>
+            <div class="exit">
+                <a class="link-exit" href="/add">Добавить запись</a>
+            </div>
+        </div>
+    </div>
+    {% block content %}{% endblock %}
+</body>
+</html>

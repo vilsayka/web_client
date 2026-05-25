@@ -1,0 +1,52 @@
+{% extends 'index.html' %}
+
+{% block new_page %}
+Добавление в {{ table_name }}
+{% endblock %}
+
+{% block link %}
+<link rel="stylesheet" href="/static/css/update_details.css">
+{% endblock %}
+
+{% block content %}
+
+    <h2>Добавление в {{ table_name }}</h2>
+
+<form method="POST" action="/add_record">
+    <input type="hidden" name="table_name" value="{{ table_name }}">
+    
+    {% for key, value in fields.items() %}
+        <div>
+            <strong>{{ key }}:</strong><br>
+            
+            {% if key == 'title' %}
+                <select name="{{ key }}" id="componentType" required>
+                    <option value="">Выберите тип</option>
+                    <option value="Processor">Процессор</option>
+                    <option value="Motherboard">Материнская плата</option>
+                    <option value="Graphics Card">Видеокарта</option>
+                    <option value="Power Supply">Блок питания</option>
+                    <option value="CPU Cooler">Охлаждение</option>
+                    <option value="RAM">Оперативная память</option>
+                    <option value="Storage">Накопитель</option>
+                    <option value="Case">Корпус</option>
+                </select>
+                
+            {% elif key == 'specifications' %}
+                <div id="specsContainer">
+                    <textarea name="specifications_json" rows="5" cols="50" placeholder="Характеристики будут сгенерированы автоматически"></textarea>
+                </div>
+            {% elif key == 'Problem_description' %}
+                    <textarea name="{{ key }}" rows="10" cols="50" placeholder="{{ value }}"></textarea>
+            {% else %}
+                <input type="text" name="{{ key }}" placeholder="{{ value }}" required>
+            {% endif %}
+        </div>
+        <br>
+    {% endfor %}
+    
+    <button type="submit">Сохранить</button>
+    <a href="/add">Отмена</a>
+</form>
+<script src="/static/js/add_form.js"></script>
+{% endblock %}

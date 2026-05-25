@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+
+{% block link %}
+<link rel="stylesheet" href="/static/css/add.css">
+{% endblock %}
+{% block new_page %}
+Добавление записи
+{% endblock %}
+
+{% block content %}
+<div class="add-container">
+    <h2>Выберите таблицу для добавления</h2>
+    
+    <div class="buttons-group"> 
+        <form method="POST" action="/add_form">
+            <button type="submit" name="table_name" value="users" class="table-btn">Пользователи</button>
+        </form>
+        <form method="POST" action="/add_form">
+            <button type="submit" name="table_name" value="importers" class="table-btn">Сборщики</button>
+        </form>  
+        <form method="POST" action="/add_form">
+            <button type="submit" name="table_name" value="orders" class="table-btn">Заказы</button>
+        </form>
+        
+        <form method="POST" action="/add_form">
+            <button type="submit" name="table_name" value="components" class="table-btn">Комплектующие</button>
+        </form>
+        
+        <form method="POST" action="/add_form">
+            <button type="submit" name="table_name" value="service_guarantees" class="table-btn">Обращение по гарантии</button>
+        </form>
+    </div>
+    
+    <a href="/" class="back-link">Назад</a>
+</div>
+{% endblock %}

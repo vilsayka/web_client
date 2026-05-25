@@ -1,0 +1,110 @@
+{% extends 'index.html' %}
+
+{% block link %}
+<link rel="stylesheet" href="/static/css/main-page-admin.css">
+{% endblock %}
+
+{% block new_page %}
+Данные
+{% endblock %}
+
+{% block content %}
+<div class="actions-bar">
+    <form method="POST" action="/" id="tableForm">
+        <select name="table_name">
+            <option value="users" {% if table_name == 'users' %}selected{% endif %}>Пользователи</option>
+            <option value="importers" {% if table_name == 'importers' %}selected{% endif %}>Импортеры</option>
+            <option value="orders" {% if table_name == 'orders' %}selected{% endif %}>Заказы</option>
+            <option value="components" {% if table_name == 'components' %}selected{% endif %}>Комплектующие</option>
+            <option value="service_guarantees" {% if table_name == 'service_guarantees' %}selected{% endif %}>Обращение по гарантии</option>
+        </select>
+        <button type="submit">Показать</button>
+    </form>
+</div>
+
+<div class="sort-bar">
+    <form method="POST" action="/">
+        <input type="hidden" name="table_name" value="{{ table_name }}">
+        
+        <label>Сортировать по:</label>
+        <select name="sort_column">
+            <option value="">Без сортировки</option>
+            {% for col in allowed_columns[table_name] %}
+                <option value="{{ col }}" {% if sort_column == col %}selected{% endif %}>{{ col }}</option>
+            {% endfor %}
+        </select>
+        
+        <label>Порядок:</label>
+        <select name="sort_order">
+            <option value="asc" {% if sort_order == 'asc' %}selected{% endif %}>По возрастанию ↑</option>
+            <option value="desc" {% if sort_order == 'desc' %}selected{% endif %}>По убыванию ↓</option>
+        </select>
+        
+        <button type="submit">Применить</button>
+    </form>
+
+    <form method="POST" action="/">
+        <input type="hidden" name="table_name" value="{{ table_name }}">
+        <input type="hidden" name="sort_column" value="{{ sort_column if sort_column else '' }}">
+        <input type="hidden" name="sort_order" value="{{ sort_order if sort_order else 'asc' }}">
+        
+        <label>Искать по полю:</label>
+        <select name="search_column">
+            <option value="">Выберите поле</option>
+            {% for col in allowed_columns_word[table_name] %}
+                <option value="{{ col }}" {% if search_column == col %}selected{% endif %}>{{ col }}</option>
+            {% endfor %}
+        </select>
+        
+        <label>Значение:</label>
+        <input type="text" name="search_value" placeholder="Введите текст для поиска" value="{{ search_value or '' }}">
+        
+        <button type="submit">Найти</button>
+    </form>
+    
+    {% if search_column and search_value %}
+        <div>
+            Поиск: {{ search_column }} содержит "{{ search_value }}"
+        </div>
+    {% endif %}
+</div>
+
+<div class="table-container">
+    {% if table_data and table_data|length > 0 %}
+        <table>
+            <thead>
+                <tr>
+                    {% for key in table_data[0].keys() %}
+                        <th>{{ key }}</th>
+                    {% endfor %}
+                    <th>Действия</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in table_data %}
+                    <tr>
+                        {% for value in row.values() %}
+                            <td>{{ value }}</td>
+                        {% endfor %}
+                        <td>
+                            <form method="POST" action="/details">
+                                <input type="hidden" name="table_name" value="{{ table_name }}">
+                                <input type="hidden" name="row_data" value='{{ row|tojson }}'>
+                                <button type="submit">Подробнее</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <div>
+            <p>Нет данных</p>
+            {% if search_column and search_value %}
+                <p>По вашему запросу "{{ search_value }}" в поле "{{ search_column }}" ничего не найдено.</p>
+                <a href="/?table={{ table_name }}">Очистить поиск</a>
+            {% endif %}
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends 'index.html' %}
+
+{% block link %}
+<link rel="stylesheet" href="/static/css/update_details.css">
+{% endblock %}
+{% block new_page %}
+Данные
+{% endblock %}
+
+{% block content %}
+<div>
+    <form method="POST" action="/update">
+        {% for key, value in row.items() %}
+            <div>
+                <strong>{{ key }}:</strong><br>
+                
+                {% if 'id' in key.lower() or key in ['created_at', 'updated_at', 'password_hash', 'date_references', 'problem_description'] %}
+                    {{ value }}
+                    <input type="hidden" name="{{ key }}" value="{{ value }}" required>
+                {% elif key == 'specifications' %}
+                    <textarea name="{{ key }}" rows="10" cols="50">{{ value | tojson(indent=2) if value is not string else value }}</textarea>
+                {% elif key == 'is_active' %}
+                    {% set is_true = value == 'True' or value == True %}
+                    <select name="{{ key }}">
+                        <option value="True" {% if is_true %}selected{% endif %}>True</option>
+                        <option value="False" {% if not is_true %}selected{% endif %}>False</option>
+                    </select>
+                {% elif key == 'user_role' %}
+                    <div>
+                        <strong>Текущее значение:</strong> {{ value }}<br>
+                        <select name="{{ key }}">
+                            <option value="customer">customer</option>
+                            <option value="importer">importer</option>
+                            <option value="admin">admin</option>
+                        </select>
+                        <small>(выберите новое значение или оставьте текущее)</small>
+                    </div>
+                {% elif key == 'status_order' %}
+                    <div>
+                        <strong>Текущее значение:</strong> {{ value }}
+                        <br>
+                        <select name="{{ key }}">
+                            <option value="ожидает сборщика">ожидает сборщика</option>
+                            <option value="на сборке">на сборке</option>
+                            <option value="собрана">собрана</option>
+                        </select>
+                        <small>(выберите новое значение или оставьте текущее)</small>
+                    </div>
+                {% elif key == 'status_repair' %}
+                    
+                    <div>
+                        <strong>Текущее значение:</strong> {{ value }}
+                        <br>
+                        <select name="{{ key }}">
+                            <option value="under consideration">under consideration</option>
+                            <option value="rejected">rejected</option>
+                            <option value="accepted">accepted</option>
+                            <option value="closed">closed</option>
+                        </select>
+                        <small>(выберите новое значение или оставьте текущее)</small>
+                    </div>
+                    
+                {% elif key == 'date_assembly' or key == 'date_repair_completion' %}
+                    <input type="date" name="{{ key }}" value="{{ value }}" required>
+                {% else %}
+                    <input type="text" name="{{ key }}" value="{{ value }}" required>
+                {% endif %}
+                <br><br>
+            </div>
+        {% endfor %}
+            <input type="hidden" name="table_name" value="{{ table_name }}">
+        
+        <button type="submit">Сохранить</button>
+        <a href="/">Отмена</a>
+    </form>
+</div>
+{% endblock %}
+
+
