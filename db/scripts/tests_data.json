@@ -1,0 +1,1115 @@
+{
+  "components": {
+    "processors": [
+      {
+        "title": "Processor",
+        "manufacturer": "AMD",
+        "model": "Ryzen 7 7800X3D",
+        "warranty_period": 36,
+        "price_complete": 38990.00,
+        "quantity_accessories": 15,
+        "specifications": {
+          "socket": "AM5",
+          "tdp_w": 120,
+          "cores": 8,
+          "threads": 16,
+          "max_boost_ghz": 5.0,
+          "ram_type": "DDR5",
+          "max_ram_speed_mhz": 5200,
+          "integrated_graphics": false,
+          "pcie_version": 5.0,
+          "max_ram_gb": 128
+        }
+      },
+      {
+        "title": "Processor",
+        "manufacturer": "AMD",
+        "model": "Ryzen 9 7950X3D",
+        "warranty_period": 36,
+        "price_complete": 69990.00,
+        "quantity_accessories": 8,
+        "specifications": {
+          "socket": "AM5",
+          "tdp_w": 120,
+          "cores": 16,
+          "threads": 32,
+          "max_boost_ghz": 5.7,
+          "ram_type": "DDR5",
+          "max_ram_speed_mhz": 5200,
+          "integrated_graphics": true,
+          "pcie_version": 5.0,
+          "max_ram_gb": 128
+        }
+      },
+      {
+        "title": "Processor",
+        "manufacturer": "AMD",
+        "model": "Ryzen 5 7600X",
+        "warranty_period": 36,
+        "price_complete": 24990.00,
+        "quantity_accessories": 25,
+        "specifications": {
+          "socket": "AM5",
+          "tdp_w": 105,
+          "cores": 6,
+          "threads": 12,
+          "max_boost_ghz": 5.3,
+          "ram_type": "DDR5",
+          "max_ram_speed_mhz": 5200,
+          "integrated_graphics": true,
+          "pcie_version": 5.0,
+          "max_ram_gb": 128
+        }
+      },
+      {
+        "title": "Processor",
+        "manufacturer": "AMD",
+        "model": "Ryzen 7 5700X3D",
+        "warranty_period": 36,
+        "price_complete": 29990.00,
+        "quantity_accessories": 12,
+        "specifications": {
+          "socket": "AM4",
+          "tdp_w": 105,
+          "cores": 8,
+          "threads": 16,
+          "max_boost_ghz": 4.1,
+          "ram_type": "DDR4",
+          "max_ram_speed_mhz": 3200,
+          "integrated_graphics": false,
+          "pcie_version": 4.0,
+          "max_ram_gb": 128
+        }
+      },
+      {
+        "title": "Processor",
+        "manufacturer": "AMD",
+        "model": "Ryzen 5 5600X",
+        "warranty_period": 36,
+        "price_complete": 15990.00,
+        "quantity_accessories": 30,
+        "specifications": {
+          "socket": "AM4",
+          "tdp_w": 65,
+          "cores": 6,
+          "threads": 12,
+          "max_boost_ghz": 4.6,
+          "ram_type": "DDR4",
+          "max_ram_speed_mhz": 3200,
+          "integrated_graphics": false,
+          "pcie_version": 4.0,
+          "max_ram_gb": 128
+        }
+      },
+      {
+        "title": "Processor",
+        "manufacturer": "AMD",
+        "model": "Ryzen 5 5500",
+        "warranty_period": 36,
+        "price_complete": 10990.00,
+        "quantity_accessories": 35,
+        "specifications": {
+          "socket": "AM4",
+          "tdp_w": 65,
+          "cores": 6,
+          "threads": 12,
+          "max_boost_ghz": 4.2,
+          "ram_type": "DDR4",
+          "max_ram_speed_mhz": 3200,
+          "integrated_graphics": false,
+          "pcie_version": 3.0,
+          "max_ram_gb": 128
+        }
+      },
+      {
+        "title": "Processor",
+        "manufacturer": "Intel",
+        "model": "Core i9-14900K",
+        "warranty_period": 36,
+        "price_complete": 58990.00,
+        "quantity_accessories": 10,
+        "specifications": {
+          "socket": "LGA1700",
+          "tdp_w": 125,
+          "cores": 24,
+          "threads": 32,
+          "max_boost_ghz": 6.0,
+          "ram_type": "DDR5/DDR4",
+          "max_ram_speed_mhz": 5600,
+          "integrated_graphics": true,
+          "pcie_version": 5.0,
+          "max_ram_gb": 192
+        }
+      },
+      {
+        "title": "Processor",
+        "manufacturer": "Intel",
+        "model": "Core i7-14700K",
+        "warranty_period": 36,
+        "price_complete": 39990.00,
+        "quantity_accessories": 15,
+        "specifications": {
+          "socket": "LGA1700",
+          "tdp_w": 125,
+          "cores": 20,
+          "threads": 28,
+          "max_boost_ghz": 5.6,
+          "ram_type": "DDR5/DDR4",
+          "max_ram_speed_mhz": 5600,
+          "integrated_graphics": true,
+          "pcie_version": 5.0,
+          "max_ram_gb": 192
+        }
+      },
+      {
+        "title": "Processor",
+        "manufacturer": "Intel",
+        "model": "Core i5-14600K",
+        "warranty_period": 36,
+        "price_complete": 29990.00,
+        "quantity_accessories": 20,
+        "specifications": {
+          "socket": "LGA1700",
+          "tdp_w": 125,
+          "cores": 14,
+          "threads": 20,
+          "max_boost_ghz": 5.3,
+          "ram_type": "DDR5/DDR4",
+          "max_ram_speed_mhz": 5600,
+          "integrated_graphics": true,
+          "pcie_version": 5.0,
+          "max_ram_gb": 192
+        }
+      },
+      {
+        "title": "Processor",
+        "manufacturer": "Intel",
+        "model": "Core i5-14400F",
+        "warranty_period": 36,
+        "price_complete": 19990.00,
+        "quantity_accessories": 25,
+        "specifications": {
+          "socket": "LGA1700",
+          "tdp_w": 65,
+          "cores": 10,
+          "threads": 16,
+          "max_boost_ghz": 4.7,
+          "ram_type": "DDR5/DDR4",
+          "max_ram_speed_mhz": 4800,
+          "integrated_graphics": false,
+          "pcie_version": 5.0,
+          "max_ram_gb": 192
+        }
+      },
+      {
+        "title": "Processor",
+        "manufacturer": "Intel",
+        "model": "Core i5-13400F",
+        "warranty_period": 36,
+        "price_complete": 17990.00,
+        "quantity_accessories": 35,
+        "specifications": {
+          "socket": "LGA1700",
+          "tdp_w": 65,
+          "cores": 10,
+          "threads": 16,
+          "max_boost_ghz": 4.6,
+          "ram_type": "DDR5/DDR4",
+          "max_ram_speed_mhz": 4800,
+          "integrated_graphics": false,
+          "pcie_version": 5.0,
+          "max_ram_gb": 192
+        }
+      },
+      {
+        "title": "Processor",
+        "manufacturer": "Intel",
+        "model": "Core i3-14100",
+        "warranty_period": 36,
+        "price_complete": 12990.00,
+        "quantity_accessories": 40,
+        "specifications": {
+          "socket": "LGA1700",
+          "tdp_w": 60,
+          "cores": 4,
+          "threads": 8,
+          "max_boost_ghz": 4.7,
+          "ram_type": "DDR5/DDR4",
+          "max_ram_speed_mhz": 4800,
+          "integrated_graphics": true,
+          "pcie_version": 5.0,
+          "max_ram_gb": 192
+        }
+      },
+      {
+        "title": "Processor",
+        "manufacturer": "Intel",
+        "model": "Core i3-12100F",
+        "warranty_period": 36,
+        "price_complete": 8990.00,
+        "quantity_accessories": 45,
+        "specifications": {
+          "socket": "LGA1700",
+          "tdp_w": 60,
+          "cores": 4,
+          "threads": 8,
+          "max_boost_ghz": 4.3,
+          "ram_type": "DDR5/DDR4",
+          "max_ram_speed_mhz": 4800,
+          "integrated_graphics": false,
+          "pcie_version": 5.0,
+          "max_ram_gb": 128
+        }
+      }
+    ],
+    "motherboards": [
+      {
+        "title": "Motherboard",
+        "manufacturer": "Asus",
+        "model": "ROG STRIX B650E-F",
+        "warranty_period": 36,
+        "price_complete": 25990.00,
+        "quantity_accessories": 8,
+        "specifications": {
+          "socket": "AM5",
+          "chipset": "B650E",
+          "form_factor": "ATX",
+          "ram_type": "DDR5",
+          "ram_slots": 4,
+          "max_ram_gb": 128,
+          "max_ram_speed_mhz": 6400,
+          "m2_slots": 3,
+          "pcie_version": 5.0,
+          "sata_ports": 4,
+          "max_tdp_support_w": 200,
+          "usb_c_front": true,
+          "bios_flashback": true
+        }
+      },
+      {
+        "title": "Motherboard",
+        "manufacturer": "MSI",
+        "model": "B650 GAMING PLUS",
+        "warranty_period": 36,
+        "price_complete": 17990.00,
+        "quantity_accessories": 15,
+        "specifications": {
+          "socket": "AM5",
+          "chipset": "B650",
+          "form_factor": "ATX",
+          "ram_type": "DDR5",
+          "ram_slots": 4,
+          "max_ram_gb": 128,
+          "max_ram_speed_mhz": 6400,
+          "m2_slots": 2,
+          "pcie_version": 4.0,
+          "sata_ports": 6,
+          "max_tdp_support_w": 180,
+          "usb_c_front": false,
+          "bios_flashback": true
+        }
+      },
+      {
+        "title": "Motherboard",
+        "manufacturer": "Gigabyte",
+        "model": "B650M AORUS ELITE",
+        "warranty_period": 36,
+        "price_complete": 18990.00,
+        "quantity_accessories": 12,
+        "specifications": {
+          "socket": "AM5",
+          "chipset": "B650",
+          "form_factor": "mATX",
+          "ram_type": "DDR5",
+          "ram_slots": 4,
+          "max_ram_gb": 128,
+          "max_ram_speed_mhz": 6400,
+          "m2_slots": 2,
+          "pcie_version": 4.0,
+          "sata_ports": 4,
+          "max_tdp_support_w": 180,
+          "usb_c_front": true,
+          "bios_flashback": false
+        }
+      },
+      {
+        "title": "Motherboard",
+        "manufacturer": "ASRock",
+        "model": "B550M Pro4",
+        "warranty_period": 36,
+        "price_complete": 10490.00,
+        "quantity_accessories": 20,
+        "specifications": {
+          "socket": "AM4",
+          "chipset": "B550",
+          "form_factor": "mATX",
+          "ram_type": "DDR4",
+          "ram_slots": 4,
+          "max_ram_gb": 128,
+          "max_ram_speed_mhz": 4733,
+          "m2_slots": 2,
+          "pcie_version": 4.0,
+          "sata_ports": 4,
+          "max_tdp_support_w": 150,
+          "usb_c_front": false,
+          "bios_flashback": false
+        }
+      },
+      {
+        "title": "Motherboard",
+        "manufacturer": "MSI",
+        "model": "B760 TOMAHAWK",
+        "warranty_period": 36,
+        "price_complete": 19990.00,
+        "quantity_accessories": 10,
+        "specifications": {
+          "socket": "LGA1700",
+          "chipset": "B760",
+          "form_factor": "ATX",
+          "ram_type": "DDR5",
+          "ram_slots": 4,
+          "max_ram_gb": 192,
+          "max_ram_speed_mhz": 6800,
+          "m2_slots": 3,
+          "pcie_version": 5.0,
+          "sata_ports": 6,
+          "max_tdp_support_w": 200,
+          "usb_c_front": true,
+          "bios_flashback": true
+        }
+      },
+      {
+        "title": "Motherboard",
+        "manufacturer": "Gigabyte",
+        "model": "Z790 AORUS ELITE",
+        "warranty_period": 36,
+        "price_complete": 25990.00,
+        "quantity_accessories": 7,
+        "specifications": {
+          "socket": "LGA1700",
+          "chipset": "Z790",
+          "form_factor": "ATX",
+          "ram_type": "DDR5",
+          "ram_slots": 4,
+          "max_ram_gb": 192,
+          "max_ram_speed_mhz": 7600,
+          "m2_slots": 4,
+          "pcie_version": 5.0,
+          "sata_ports": 4,
+          "max_tdp_support_w": 250,
+          "usb_c_front": true,
+          "bios_flashback": true
+        }
+      },
+      {
+        "title": "Motherboard",
+        "manufacturer": "Asus",
+        "model": "PRIME B760M-A",
+        "warranty_period": 36,
+        "price_complete": 12990.00,
+        "quantity_accessories": 20,
+        "specifications": {
+          "socket": "LGA1700",
+          "chipset": "B760",
+          "form_factor": "mATX",
+          "ram_type": "DDR5",
+          "ram_slots": 4,
+          "max_ram_gb": 128,
+          "max_ram_speed_mhz": 7200,
+          "m2_slots": 2,
+          "pcie_version": 4.0,
+          "sata_ports": 4,
+          "max_tdp_support_w": 150,
+          "usb_c_front": false,
+          "bios_flashback": false
+        }
+      },
+      {
+        "title": "Motherboard",
+        "manufacturer": "MSI",
+        "model": "PRO B760M-P",
+        "warranty_period": 36,
+        "price_complete": 9990.00,
+        "quantity_accessories": 25,
+        "specifications": {
+          "socket": "LGA1700",
+          "chipset": "B760",
+          "form_factor": "mATX",
+          "ram_type": "DDR4",
+          "ram_slots": 2,
+          "max_ram_gb": 64,
+          "max_ram_speed_mhz": 3200,
+          "m2_slots": 1,
+          "pcie_version": 4.0,
+          "sata_ports": 4,
+          "max_tdp_support_w": 120,
+          "usb_c_front": false,
+          "bios_flashback": false
+        }
+      }
+    ],
+    "gpus": [
+      {
+        "title": "Graphics Card",
+        "manufacturer": "NVIDIA",
+        "model": "RTX 4090",
+        "warranty_period": 36,
+        "price_complete": 159990.00,
+        "quantity_accessories": 3,
+        "specifications": {
+          "tdp_w": 450,
+          "recommended_psu_w": 1000,
+          "length_mm": 348,
+          "thickness_slots": 3.5,
+          "pcie_power_pins": "12VHPWR",
+          "pcie_version": 4.0,
+          "vram_gb": 24,
+          "vram_type": "GDDR6X"
+        }
+      },
+      {
+        "title": "Graphics Card",
+        "manufacturer": "NVIDIA",
+        "model": "RTX 4080 Super",
+        "warranty_period": 36,
+        "price_complete": 99990.00,
+        "quantity_accessories": 5,
+        "specifications": {
+          "tdp_w": 320,
+          "recommended_psu_w": 750,
+          "length_mm": 310,
+          "thickness_slots": 3.2,
+          "pcie_power_pins": "12VHPWR",
+          "pcie_version": 4.0,
+          "vram_gb": 16,
+          "vram_type": "GDDR6X"
+        }
+      },
+      {
+        "title": "Graphics Card",
+        "manufacturer": "NVIDIA",
+        "model": "RTX 4070 Ti Super",
+        "warranty_period": 36,
+        "price_complete": 79990.00,
+        "quantity_accessories": 8,
+        "specifications": {
+          "tdp_w": 285,
+          "recommended_psu_w": 700,
+          "length_mm": 305,
+          "thickness_slots": 3.0,
+          "pcie_power_pins": "12VHPWR",
+          "pcie_version": 4.0,
+          "vram_gb": 16,
+          "vram_type": "GDDR6X"
+        }
+      },
+      {
+        "title": "Graphics Card",
+        "manufacturer": "NVIDIA",
+        "model": "RTX 4070",
+        "warranty_period": 36,
+        "price_complete": 54990.00,
+        "quantity_accessories": 12,
+        "specifications": {
+          "tdp_w": 200,
+          "recommended_psu_w": 650,
+          "length_mm": 267,
+          "thickness_slots": 2.5,
+          "pcie_power_pins": "8-pin",
+          "pcie_version": 4.0,
+          "vram_gb": 12,
+          "vram_type": "GDDR6X"
+        }
+      },
+      {
+        "title": "Graphics Card",
+        "manufacturer": "NVIDIA",
+        "model": "RTX 4060 Ti",
+        "warranty_period": 36,
+        "price_complete": 39990.00,
+        "quantity_accessories": 15,
+        "specifications": {
+          "tdp_w": 160,
+          "recommended_psu_w": 550,
+          "length_mm": 240,
+          "thickness_slots": 2.0,
+          "pcie_power_pins": "8-pin",
+          "pcie_version": 4.0,
+          "vram_gb": 8,
+          "vram_type": "GDDR6"
+        }
+      },
+      {
+        "title": "Graphics Card",
+        "manufacturer": "AMD",
+        "model": "RX 7900 XTX",
+        "warranty_period": 36,
+        "price_complete": 94990.00,
+        "quantity_accessories": 6,
+        "specifications": {
+          "tdp_w": 355,
+          "recommended_psu_w": 800,
+          "length_mm": 344,
+          "thickness_slots": 3.0,
+          "pcie_power_pins": "8-pin x 2",
+          "pcie_version": 4.0,
+          "vram_gb": 24,
+          "vram_type": "GDDR6"
+        }
+      },
+      {
+        "title": "Graphics Card",
+        "manufacturer": "AMD",
+        "model": "RX 7800 XT",
+        "warranty_period": 36,
+        "price_complete": 49990.00,
+        "quantity_accessories": 10,
+        "specifications": {
+          "tdp_w": 263,
+          "recommended_psu_w": 700,
+          "length_mm": 318,
+          "thickness_slots": 2.5,
+          "pcie_power_pins": "8-pin x 2",
+          "pcie_version": 4.0,
+          "vram_gb": 16,
+          "vram_type": "GDDR6"
+        }
+      },
+      {
+        "title": "Graphics Card",
+        "manufacturer": "AMD",
+        "model": "RX 7700 XT",
+        "warranty_period": 36,
+        "price_complete": 42990.00,
+        "quantity_accessories": 12,
+        "specifications": {
+          "tdp_w": 245,
+          "recommended_psu_w": 650,
+          "length_mm": 310,
+          "thickness_slots": 2.5,
+          "pcie_power_pins": "8-pin x 2",
+          "pcie_version": 4.0,
+          "vram_gb": 12,
+          "vram_type": "GDDR6"
+        }
+      }
+    ],
+    "psus": [
+      {
+        "title": "Power Supply",
+        "manufacturer": "Corsair",
+        "model": "RM1000e",
+        "warranty_period": 84,
+        "price_complete": 15990.00,
+        "quantity_accessories": 10,
+        "specifications": {
+          "wattage": 1000,
+          "form_factor": "ATX",
+          "length_mm": 140,
+          "efficiency": "Gold",
+          "modular": "Full",
+          "pcie_8pin_count": 3,
+          "pcie_12vhpwr_count": 1,
+          "cpu_4plus4_count": 2,
+          "sata_power_count": 8
+        }
+      },
+      {
+        "title": "Power Supply",
+        "manufacturer": "Corsair",
+        "model": "RM850e",
+        "warranty_period": 84,
+        "price_complete": 12990.00,
+        "quantity_accessories": 12,
+        "specifications": {
+          "wattage": 850,
+          "form_factor": "ATX",
+          "length_mm": 140,
+          "efficiency": "Gold",
+          "modular": "Full",
+          "pcie_8pin_count": 3,
+          "pcie_12vhpwr_count": 1,
+          "cpu_4plus4_count": 2,
+          "sata_power_count": 6
+        }
+      },
+      {
+        "title": "Power Supply",
+        "manufacturer": "Corsair",
+        "model": "RM750e",
+        "warranty_period": 84,
+        "price_complete": 9990.00,
+        "quantity_accessories": 20,
+        "specifications": {
+          "wattage": 750,
+          "form_factor": "ATX",
+          "length_mm": 140,
+          "efficiency": "Gold",
+          "modular": "Full",
+          "pcie_8pin_count": 3,
+          "pcie_12vhpwr_count": 1,
+          "cpu_4plus4_count": 2,
+          "sata_power_count": 6
+        }
+      },
+      {
+        "title": "Power Supply",
+        "manufacturer": "Corsair",
+        "model": "RM650",
+        "warranty_period": 120,
+        "price_complete": 8990.00,
+        "quantity_accessories": 25,
+        "specifications": {
+          "wattage": 650,
+          "form_factor": "ATX",
+          "length_mm": 140,
+          "efficiency": "Gold",
+          "modular": "Full",
+          "pcie_8pin_count": 2,
+          "pcie_12vhpwr_count": 0,
+          "cpu_4plus4_count": 2,
+          "sata_power_count": 5
+        }
+      },
+      {
+        "title": "Power Supply",
+        "manufacturer": "Corsair",
+        "model": "SF750",
+        "warranty_period": 84,
+        "price_complete": 16990.00,
+        "quantity_accessories": 8,
+        "specifications": {
+          "wattage": 750,
+          "form_factor": "SFX",
+          "length_mm": 100,
+          "efficiency": "Platinum",
+          "modular": "Full",
+          "pcie_8pin_count": 3,
+          "pcie_12vhpwr_count": 0,
+          "cpu_4plus4_count": 2,
+          "sata_power_count": 4
+        }
+      },
+      {
+        "title": "Power Supply",
+        "manufacturer": "be quiet!",
+        "model": "Pure Power 12 M 850W",
+        "warranty_period": 60,
+        "price_complete": 11990.00,
+        "quantity_accessories": 15,
+        "specifications": {
+          "wattage": 850,
+          "form_factor": "ATX",
+          "length_mm": 160,
+          "efficiency": "Gold",
+          "modular": "Full",
+          "pcie_8pin_count": 4,
+          "pcie_12vhpwr_count": 1,
+          "cpu_4plus4_count": 2,
+          "sata_power_count": 8
+        }
+      },
+      {
+        "title": "Power Supply",
+        "manufacturer": "Deepcool",
+        "model": "PF650 650W",
+        "warranty_period": 36,
+        "price_complete": 4990.00,
+        "quantity_accessories": 30,
+        "specifications": {
+          "wattage": 650,
+          "form_factor": "ATX",
+          "length_mm": 140,
+          "efficiency": "Bronze",
+          "modular": "Non",
+          "pcie_8pin_count": 2,
+          "pcie_12vhpwr_count": 0,
+          "cpu_4plus4_count": 1,
+          "sata_power_count": 4
+        }
+      }
+    ],
+    "coolers": [
+      {
+        "title": "CPU Cooler",
+        "manufacturer": "Noctua",
+        "model": "NH-D15",
+        "warranty_period": 72,
+        "price_complete": 9990.00,
+        "quantity_accessories": 20,
+        "specifications": {
+          "type": "air",
+          "tdp_w": 220,
+          "height_mm": 165,
+          "supported_sockets": ["LGA1700", "LGA1200", "AM5", "AM4"],
+          "ram_clearance_mm": 32,
+          "fan_count": 2,
+          "rgb": false
+        }
+      },
+      {
+        "title": "CPU Cooler",
+        "manufacturer": "Deepcool",
+        "model": "AK620",
+        "warranty_period": 36,
+        "price_complete": 6490.00,
+        "quantity_accessories": 25,
+        "specifications": {
+          "type": "air",
+          "tdp_w": 260,
+          "height_mm": 160,
+          "supported_sockets": ["LGA1700", "LGA1200", "AM5", "AM4"],
+          "ram_clearance_mm": 43,
+          "fan_count": 2,
+          "rgb": false
+        }
+      },
+      {
+        "title": "CPU Cooler",
+        "manufacturer": "Arctic",
+        "model": "Liquid Freezer III 360",
+        "warranty_period": 72,
+        "price_complete": 8990.00,
+        "quantity_accessories": 15,
+        "specifications": {
+          "type": "liquid",
+          "tdp_w": 300,
+          "height_mm": 53,
+          "radiator_mm": 360,
+          "supported_sockets": ["LGA1700", "LGA1200", "AM5", "AM4"],
+          "fan_count": 3,
+          "rgb": true
+        }
+      },
+      {
+        "title": "CPU Cooler",
+        "manufacturer": "Cooler Master",
+        "model": "Hyper 212",
+        "warranty_period": 24,
+        "price_complete": 4490.00,
+        "quantity_accessories": 50,
+        "specifications": {
+          "type": "air",
+          "tdp_w": 150,
+          "height_mm": 159,
+          "supported_sockets": ["LGA1700", "LGA1200", "AM5", "AM4"],
+          "ram_clearance_mm": 37,
+          "fan_count": 1,
+          "rgb": false
+        }
+      },
+      {
+        "title": "CPU Cooler",
+        "manufacturer": "ID-Cooling",
+        "model": "SE-224-XTS",
+        "warranty_period": 24,
+        "price_complete": 2990.00,
+        "quantity_accessories": 40,
+        "specifications": {
+          "type": "air",
+          "tdp_w": 180,
+          "height_mm": 154,
+          "supported_sockets": ["LGA1700", "LGA1200", "AM5", "AM4"],
+          "ram_clearance_mm": 45,
+          "fan_count": 1,
+          "rgb": true
+        }
+      }
+    ],
+    "ram": [
+      {
+        "title": "RAM",
+        "manufacturer": "Corsair",
+        "model": "Vengeance DDR5 32GB",
+        "warranty_period": 999,
+        "price_complete": 10490.00,
+        "quantity_accessories": 25,
+        "specifications": {
+          "type": "DDR5",
+          "size_gb_per_stick": 16,
+          "stick_count": 2,
+          "total_gb": 32,
+          "speed_mhz": 6000,
+          "cas_latency": 30,
+          "voltage_v": 1.35,
+          "height_mm": 35,
+          "rgb": false,
+          "xmp_ready": true,
+          "expo_ready": true
+        }
+      },
+      {
+        "title": "RAM",
+        "manufacturer": "G.Skill",
+        "model": "Trident Z5 RGB 32GB",
+        "warranty_period": 999,
+        "price_complete": 11990.00,
+        "quantity_accessories": 20,
+        "specifications": {
+          "type": "DDR5",
+          "size_gb_per_stick": 16,
+          "stick_count": 2,
+          "total_gb": 32,
+          "speed_mhz": 6000,
+          "cas_latency": 36,
+          "voltage_v": 1.35,
+          "height_mm": 44,
+          "rgb": true,
+          "xmp_ready": true,
+          "expo_ready": true
+        }
+      },
+      {
+        "title": "RAM",
+        "manufacturer": "Kingston",
+        "model": "FURY Beast 32GB",
+        "warranty_period": 999,
+        "price_complete": 9990.00,
+        "quantity_accessories": 30,
+        "specifications": {
+          "type": "DDR5",
+          "size_gb_per_stick": 16,
+          "stick_count": 2,
+          "total_gb": 32,
+          "speed_mhz": 5600,
+          "cas_latency": 40,
+          "voltage_v": 1.25,
+          "height_mm": 34.9,
+          "rgb": false,
+          "xmp_ready": true,
+          "expo_ready": true
+        }
+      },
+      {
+        "title": "RAM",
+        "manufacturer": "G.Skill",
+        "model": "Ripjaws V 32GB",
+        "warranty_period": 999,
+        "price_complete": 6990.00,
+        "quantity_accessories": 30,
+        "specifications": {
+          "type": "DDR4",
+          "size_gb_per_stick": 16,
+          "stick_count": 2,
+          "total_gb": 32,
+          "speed_mhz": 3200,
+          "cas_latency": 16,
+          "voltage_v": 1.35,
+          "height_mm": 42,
+          "rgb": false,
+          "xmp_ready": true,
+          "expo_ready": false
+        }
+      },
+      {
+        "title": "RAM",
+        "manufacturer": "Corsair",
+        "model": "Vengeance LPX 16GB",
+        "warranty_period": 999,
+        "price_complete": 3990.00,
+        "quantity_accessories": 50,
+        "specifications": {
+          "type": "DDR4",
+          "size_gb_per_stick": 8,
+          "stick_count": 2,
+          "total_gb": 16,
+          "speed_mhz": 3200,
+          "cas_latency": 16,
+          "voltage_v": 1.35,
+          "height_mm": 31,
+          "rgb": false,
+          "xmp_ready": true,
+          "expo_ready": false
+        }
+      }
+    ],
+    "storage": [
+      {
+        "title": "Storage",
+        "manufacturer": "Samsung",
+        "model": "980 Pro 1TB",
+        "warranty_period": 60,
+        "price_complete": 11990.00,
+        "quantity_accessories": 30,
+        "specifications": {
+          "type": "NVMe M.2",
+          "capacity_gb": 1000,
+          "interface": "PCIe 4.0 x4",
+          "form_factor": "M.2 2280",
+          "read_speed_mbps": 7000,
+          "write_speed_mbps": 5000,
+          "tbw": 600,
+          "dram_cache": true
+        }
+      },
+      {
+        "title": "Storage",
+        "manufacturer": "Samsung",
+        "model": "870 EVO 1TB",
+        "warranty_period": 60,
+        "price_complete": 8990.00,
+        "quantity_accessories": 35,
+        "specifications": {
+          "type": "SATA SSD",
+          "capacity_gb": 1000,
+          "interface": "SATA 3.0",
+          "form_factor": "2.5\"",
+          "read_speed_mbps": 560,
+          "write_speed_mbps": 530,
+          "tbw": 600,
+          "dram_cache": true
+        }
+      },
+      {
+        "title": "Storage",
+        "manufacturer": "Western Digital",
+        "model": "WD Black SN850X 2TB",
+        "warranty_period": 60,
+        "price_complete": 15990.00,
+        "quantity_accessories": 20,
+        "specifications": {
+          "type": "NVMe M.2",
+          "capacity_gb": 2000,
+          "interface": "PCIe 4.0 x4",
+          "form_factor": "M.2 2280",
+          "read_speed_mbps": 7300,
+          "write_speed_mbps": 6600,
+          "tbw": 1200,
+          "dram_cache": true
+        }
+      },
+      {
+        "title": "Storage",
+        "manufacturer": "Kingston",
+        "model": "NV2 1TB",
+        "warranty_period": 36,
+        "price_complete": 5990.00,
+        "quantity_accessories": 45,
+        "specifications": {
+          "type": "NVMe M.2",
+          "capacity_gb": 1000,
+          "interface": "PCIe 4.0 x4",
+          "form_factor": "M.2 2280",
+          "read_speed_mbps": 3500,
+          "write_speed_mbps": 2100,
+          "tbw": 320,
+          "dram_cache": false
+        }
+      },
+      {
+        "title": "Storage",
+        "manufacturer": "Seagate",
+        "model": "BarraCuda 2TB",
+        "warranty_period": 24,
+        "price_complete": 4990.00,
+        "quantity_accessories": 25,
+        "specifications": {
+          "type": "HDD",
+          "capacity_gb": 2000,
+          "interface": "SATA 3.0",
+          "form_factor": "3.5\"",
+          "read_speed_mbps": 210,
+          "write_speed_mbps": 210,
+          "tbw": null,
+          "dram_cache": true,
+          "rpm": 7200
+        }
+      }
+    ],
+    "cases": [
+      {
+        "title": "Case",
+        "manufacturer": "Corsair",
+        "model": "4000D Airflow",
+        "warranty_period": 24,
+        "price_complete": 8990.00,
+        "quantity_accessories": 7,
+        "specifications": {
+          "form_factors_supported": ["ATX", "mATX", "ITX"],
+          "max_cpu_cooler_height_mm": 170,
+          "max_gpu_length_mm": 360,
+          "psu_form_factors": ["ATX"],
+          "max_psu_length_mm": 220,
+          "drive_bays_35": 2,
+          "drive_bays_25": 2,
+          "radiator_support": {
+            "front": "280/360",
+            "top": "240/280",
+            "rear": "120"
+          },
+          "fan_count_included": 2
+        }
+      },
+      {
+        "title": "Case",
+        "manufacturer": "Lian Li",
+        "model": "O11 Dynamic EVO",
+        "warranty_period": 12,
+        "price_complete": 15990.00,
+        "quantity_accessories": 5,
+        "specifications": {
+          "form_factors_supported": ["E-ATX", "ATX", "mATX", "ITX"],
+          "max_cpu_cooler_height_mm": 167,
+          "max_gpu_length_mm": 420,
+          "psu_form_factors": ["ATX"],
+          "max_psu_length_mm": 210,
+          "drive_bays_35": 2,
+          "drive_bays_25": 4,
+          "radiator_support": {
+            "front": "360",
+            "top": "360",
+            "rear": "120",
+            "side": "360"
+          },
+          "fan_count_included": 0
+        }
+      },
+      {
+        "title": "Case",
+        "manufacturer": "NZXT",
+        "model": "H5 Flow",
+        "warranty_period": 24,
+        "price_complete": 9490.00,
+        "quantity_accessories": 10,
+        "specifications": {
+          "form_factors_supported": ["ATX", "mATX", "ITX"],
+          "max_cpu_cooler_height_mm": 165,
+          "max_gpu_length_mm": 365,
+          "psu_form_factors": ["ATX"],
+          "max_psu_length_mm": 200,
+          "drive_bays_35": 1,
+          "drive_bays_25": 2,
+          "radiator_support": {
+            "front": "240/280",
+            "top": "240",
+            "rear": "120"
+          },
+          "fan_count_included": 2
+        }
+      },
+      {
+        "title": "Case",
+        "manufacturer": "Fractal Design",
+        "model": "Pop Air",
+        "warranty_period": 24,
+        "price_complete": 7990.00,
+        "quantity_accessories": 12,
+        "specifications": {
+          "form_factors_supported": ["ATX", "mATX", "ITX"],
+          "max_cpu_cooler_height_mm": 170,
+          "max_gpu_length_mm": 405,
+          "psu_form_factors": ["ATX"],
+          "max_psu_length_mm": 250,
+          "drive_bays_35": 2,
+          "drive_bays_25": 2,
+          "radiator_support": {
+            "front": "240/280",
+            "top": "240",
+            "rear": "120"
+          },
+          "fan_count_included": 3
+        }
+      }
+    ]
+  }
+}

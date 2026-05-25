@@ -1,0 +1,66 @@
+Правила по миграции базы данных
+
+1. Скачать последнюю(18) версию PostgreSQL с официального сайта(https://www.postgresql.org/download/)
+2. При установке ставим пароль: vibecore (это важно!). Всё остальное по умолчанию.
+3. находим новый скачанный SQL Shell (psql).
+4. нажимаем ENTER до тех пор пока не увими надпись Password for user postgres(возможно будет на русском).
+5. вбиваем пороль из пункта 2 (вы не будете видеть, что вбиваете, поэтому пишите без ошибок).
+6. если всё прошло удачто пишем: CREATE DATABASE vibecore;
+7. далее заходим в консоль vs code и пишем команды: 
+            & "C:\Program Files\PostgreSQL\18\bin\psql.exe" -h localhost -U postgres -d vibecore -f D:\web_client\db\migrations\1_create_table_users.sql 
+            & "C:\Program Files\PostgreSQL\18\bin\psql.exe" -h localhost -U postgres -d vibecore -f D:\web_client\db\migrations\2_create_all_tables.sql  
+   (если путь другой, то поменяйте или попробуйте использовать "psql" в место него)
+8. а вообще лучше сразу в дс идти, просто для справки написал, чтобы самому не забыть.
+
+Развёртка на Docker
+
+1. Установка Docker
+
+Скачай Docker Desktop с официального сайта(https://www.docker.com/products/docker-desktop/)
+
+2. Запуск мастер-контейнера
+
+docker run --name Master-Slave -p 5438:5432 -e POSTGRES_USER=vibecore -e POSTGRES_PASSWORD=vibecore -e POSTGRES_DB=vibecore -d postgres
+
+    Master-Slave – имя контейнера
+    5438:5432 – порт на хосте:порт в контейнере
+    vibecore – пользователь, пароль и имя БД
+
+3. Создание сети для связи контейнеров
+
+docker network create postgres_network
+docker network connect postgres_network Master-Slave
+
+4. Настройка мастера (репликация)
+
+docker exec -it Master-Slave psql -U vibecore -c "ALTER SYSTEM SET wal_level = replica;"
+docker exec -it Master-Slave psql -U vibecore -c "ALTER SYSTEM SET max_wal_senders = 10;"
+docker exec -it Master-Slave psql -U vibecore -c "ALTER SYSTEM SET listen_addresses = '*';"
+docker exec -it Master-Slave psql -U vibecore -c "SELECT pg_reload_conf();"
+
+5. Разрешение доступа для реплики
+
+скопировать и отредактировать pg_hba.conf:
+
+docker cp Master-Slave:/var/lib/postgresql/18/docker/pg_hba.conf .
+echo "host replication all 0.0.0.0/0 md5" >> pg_hba.conf
+docker cp pg_hba.conf Master-Slave:/var/lib/postgresql/18/docker/pg_hba.conf
+docker restart Master-Slave
+
+6. Создание пользователя для репликации
+
+docker exec -it Master-Slave psql -U vibecore -c "CREATE USER replicator WITH REPLICATION LOGIN ENCRYPTED PASSWORD 'vibecore';"
+
+7. Клонирование данных на реплику
+
+docker volume create replica_data
+docker run --rm --network postgres_network -v replica_data:/var/lib/postgresql -e PGPASSWORD="vibecore" postgres:18.4 sh -c "pg_basebackup -h Master-Slave -p 5432 -U replicator -D /var/lib/postgresql/18/docker -Fp -Xs -P -R && chown -R 999:999 /var/lib/postgresql/18"
+
+8. Запуск реплики
+
+docker run --name postgres_replica --network postgres_network -p 5439:5432 -v replica_data:/var/lib/postgresql -e POSTGRES_USER=vibecore -e POSTGRES_PASSWORD=vibecore -e POSTGRES_DB=vibecore -d postgres:18.4
+
+9. Проверка работы репликации
+
+docker exec -it postgres_replica psql -U vibecore -c "SELECT pg_is_in_recovery();"  (должно вернуть t)
+docker exec -it Master-Slave psql -U vibecore -c "SELECT application_name, state FROM pg_stat_replication;"  (должно показать streaming)
