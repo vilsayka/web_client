@@ -1,9 +1,7 @@
 import json
-from database import get_db_connection
 
-def load_components_to_db(json_file):
+def load_components_to_db(conn, json_file):
 
-    conn = get_db_connection()
     cur = conn.cursor()
 
     with open(json_file, 'r', encoding='utf-8') as f:

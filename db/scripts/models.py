@@ -1,4 +1,3 @@
-from database import get_db_connection
 from psycopg2.extras import DictCursor
 import json
 
@@ -9,9 +8,7 @@ data_user = {
     "password_hash": "password4"
     }
 
-def add_user(userdata):
-
-    conn = get_db_connection()
+def add_user(conn, userdata):
     cur = conn.cursor()
     sql = "INSERT INTO users (user_name, password_hash) VALUES (%s, %s)"
     cur.execute(sql, (userdata["user_name"], userdata["password_hash"]))
@@ -21,8 +18,7 @@ def add_user(userdata):
 
 #add_user(data_user)
 
-def update_password_user(userdata):
-    conn = get_db_connection()
+def update_password_user(conn, userdata):
     cur = conn.cursor()
     
     sql = "UPDATE users SET password_hash = %s WHERE id_user = %s"
@@ -33,8 +29,7 @@ def update_password_user(userdata):
     conn.close()
 #update_password_user(data_user)
 
-def update_data_user(userdata):
-    conn = get_db_connection()
+def update_data_user(conn, userdata):
     cur = conn.cursor()
     
     sql = "UPDATE users SET is_active = %s, user_role= %s WHERE id_user = %s"
@@ -45,8 +40,7 @@ def update_data_user(userdata):
     conn.close()
 #update_data_user(data_user)
 
-def read_data_user(username):
-    conn = get_db_connection()
+def read_data_user(conn, username):
     cur = conn.cursor()
     with conn.cursor(cursor_factory=DictCursor) as cur:
         sql = "SELECT * FROM users WHERE user_name = %s"
@@ -58,8 +52,7 @@ def read_data_user(username):
     conn.close()
     return userdata
 
-def read_data_user():
-    conn = get_db_connection() 
+def read_data(conn): 
     with conn.cursor(cursor_factory=DictCursor) as cur:
         sql = "SELECT * FROM users"
         cur.execute(sql)
@@ -80,9 +73,7 @@ data_importer = {
     "email": "hi@you.ez"
     }
 
-def add_importer(userdata):
-
-    conn = get_db_connection()
+def add_importer(conn, userdata):
     cur = conn.cursor()
     sql_user = "INSERT INTO users (user_name, password_hash, user_role) VALUES (%s, %s, 'importer') RETURNING id_user"
     cur.execute(sql_user, (userdata["user_name"], userdata["password_hash"]))
@@ -98,8 +89,7 @@ def add_importer(userdata):
 
 #add_importer(data_importer)
 
-def update_importer(data_importer):
-    conn = get_db_connection()
+def update_importer(conn, data_importer):
     cur = conn.cursor()
     
     sql = "UPDATE importers SET full_name = %s, telephone = %s, email = %s WHERE id_importer = %s"
@@ -111,8 +101,7 @@ def update_importer(data_importer):
 
 #update_importer(data_importer)
 
-def read_data_importer():
-    conn = get_db_connection()
+def read_data_importer(conn):
     cur = conn.cursor()
     with conn.cursor(cursor_factory=DictCursor) as cur:
         sql = "SELECT * FROM importers"
@@ -134,9 +123,7 @@ data_order = {
     "warranty_period": "34"
     }
 
-def add_order(userdata):
-
-    conn = get_db_connection()
+def add_order(conn, userdata):
     cur = conn.cursor()
     sql = "INSERT INTO orders (id_customer, id_importer, warranty_period, status_order) VALUES (%s, %s, %s, %s)"
     cur.execute(sql, (userdata["id_customer"], userdata["id_importer"], userdata["warranty_period"], "сформирована"))
@@ -146,8 +133,7 @@ def add_order(userdata):
 
 #add_order(data_order)
 
-def read_data_order():
-    conn = get_db_connection()
+def read_data_order(conn):
     cur = conn.cursor()
     with conn.cursor(cursor_factory=DictCursor) as cur:
         sql = "SELECT * FROM orders"
@@ -160,8 +146,7 @@ def read_data_order():
 
 #print(read_data_order())
 
-def update_data_order(data_order):
-    conn = get_db_connection()
+def update_data_order(conn, data_order):
     cur = conn.cursor()
     
     sql = "UPDATE orders SET status_order = %s, date_assembly= %s, warranty_period= %s WHERE id_order = %s"
@@ -184,9 +169,7 @@ data_service_guarantees = {
     "status_order": 'rejected',
     }
 
-def add_service_guarantees(userdata):
-
-    conn = get_db_connection()
+def add_service_guarantees(conn, userdata):
     cur = conn.cursor()
     sql = "INSERT INTO service_guarantees (id_order, id_defective_component, Problem_description) VALUES (%s, %s, %s)"
     cur.execute(sql, (userdata["id_order"], userdata["id_defective_component"], userdata["Problem_description"]))
@@ -196,8 +179,7 @@ def add_service_guarantees(userdata):
 
 #add_service_guarantees(data_service_guarantees)
 
-def update_data_service_guarantees(data_order):
-    conn = get_db_connection()
+def update_data_service_guarantees(conn, data_order):
     cur = conn.cursor()
     
     sql = "UPDATE service_guarantees SET date_repair_completion = %s, status_repair = %s WHERE id_repair_warranty = %s"
@@ -209,8 +191,7 @@ def update_data_service_guarantees(data_order):
     
 #update_status_service_guarantees(data_service_guarantees)
 
-def read_data_service_guarantees():
-    conn = get_db_connection()
+def read_data_service_guarantees(conn):
     cur = conn.cursor()
     with conn.cursor(cursor_factory=DictCursor) as cur:
         sql = "SELECT * FROM service_guarantees"
@@ -244,9 +225,7 @@ data_components = {
     "vram_type": "GDDR6X"}
     }
 
-def add_components(componentdata):
-
-    conn = get_db_connection()
+def add_components(conn, componentdata):
     cur = conn.cursor()
     sql = "INSERT INTO components (title, manufacturer, model, warranty_period, price_complete, quantity_accessories, specifications) VALUES (%s, %s, %s, %s, %s, %s, %s)"
 
@@ -259,8 +238,7 @@ def add_components(componentdata):
 
 #add_components(data_components)
 
-def update_components(componentdata):
-    conn = get_db_connection()
+def update_components(conn, componentdata):
     cur = conn.cursor()
     
     specifications_json = json.dumps(componentdata["specifications"], ensure_ascii=False)
@@ -274,8 +252,7 @@ def update_components(componentdata):
     
 #update_components(data_components)
 
-def read_data_components():
-    conn = get_db_connection()
+def read_data_components(conn):
     cur = conn.cursor()
     with conn.cursor(cursor_factory=DictCursor) as cur:
         sql = "SELECT * FROM components"
