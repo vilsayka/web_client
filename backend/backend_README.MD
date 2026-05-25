@@ -21,7 +21,8 @@
 Оба сервиса используют Master для записи и Slave для чтения.
 
 ## Структура проекта (Backend)
-backend/
+
+```backend/
 ├── main.py # FastAPI приложение, маршруты статики
 ├── config.py # Конфигурация (SECRET_KEY, DATABASE_URL)
 ├── database.py # Подключения get_master_connection / get_slave_connection
@@ -48,6 +49,8 @@ backend/
 | └──flask/ # Supporting сервис
 |   ├─ main.py # Flask приложение (админ-панель)
 └   └── models.py # CRUD функции для админки
+```
+
 
 
 ## Основные API эндпоинты (FastAPI)
@@ -97,16 +100,21 @@ backend/
 ## Запуск
 
 ### 1. Установка зависимостей
-```bash
+```
 pip install -r requirements.txt
-cd backend
+```
+### 2. FastAPI (Core)
+```cd backend
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
-Документация: http://127.0.0.1:8000/docs
-cd backend
+Документация: http://127.0.0.1:8000/docs  
+```
+### 3. Flask (Supporting / Admin)
+```cd backend
 python flask/main.py
 Админ-панель: http://127.0.0.1:5000
+```
 
-
+## Примечание:
 - Все пароли хэшируются bcrypt (как в FastAPI, так и в Flask).
 
 - JWT токен содержит sub (username), user_role, user_id.
