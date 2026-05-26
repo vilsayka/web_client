@@ -10,8 +10,7 @@ from app.core.security import create_access_token
 from app.services.user_service import authenticate, register
 from dependency import get_db_master, get_db_slave
 from fastapi.security import HTTPAuthorizationCredentials
-from jose import JWTError
-import jwt
+from jose import JWTError, jwt
 from app.core.security import oauth2_scheme, SECRET_KEY, ALGORITHM
 
 router = APIRouter()
