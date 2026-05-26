@@ -9,7 +9,7 @@
 Команда проверки:
 
 ```powershell
-C:\Users\berdn\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe -m unittest discover -s tests -p "test*.py" -v
+python3 unittest discover -s tests -p "test*.py" -v
 ```
 
 Результат:
