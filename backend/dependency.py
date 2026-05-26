@@ -2,14 +2,10 @@
 
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPAuthorizationCredentials
-from jose import JWTError
-import jwt
-
-from app.repository.user_repo import get_user
+from jose import JWTError, jwt
 from database import get_master_connection, get_slave_connection
 
 #from fastapi.security import OAuth2PasswordBearer
-
 from app.core.security import oauth2_scheme, SECRET_KEY, ALGORITHM
 
 def get_db_master():

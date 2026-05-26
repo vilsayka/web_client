@@ -1,7 +1,6 @@
 from datetime import datetime, timedelta, timezone
-import jwt
 from fastapi.security import HTTPBearer
-
+from jose import jwt
 
 #from fastapi.security import OAuth2PasswordBearer
 from config import SECRET_KEY, ALGORITHM, ACCESS_TOKEN_EXPIRE_MINUTES
