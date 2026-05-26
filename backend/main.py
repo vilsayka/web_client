@@ -6,6 +6,10 @@ from app.api.v1.routers import api_router
 from fastapi.middleware.cors import CORSMiddleware
 from app.pages import pages_router
 
+import os
+
+static_dir = os.path.join(os.path.dirname(__file__), "..", "frontend", "static")
+templates_dir = os.path.join(os.path.dirname(__file__), "..", "frontend", "templates")
 
 app = FastAPI(title="Vibecore API")
 
@@ -25,10 +29,12 @@ async def root():
     return FileResponse("../frontend/templates/main.html")
 
 
-app.mount("/static", StaticFiles(directory="../frontend/static"), name="static")
+
+app.mount("/static", StaticFiles(directory=static_dir), name="static")
 
 
-app.mount("/pages", StaticFiles(directory="../frontend/templates", html=True), name="templates")
+
+app.mount("/pages", StaticFiles(directory=templates_dir), name="templates")
 
 app.include_router(pages_router)
 
