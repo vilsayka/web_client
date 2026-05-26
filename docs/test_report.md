@@ -9,7 +9,7 @@
 Команда проверки:
 
 ```powershell
-python3 unittest discover -s tests -p "test*.py" -v
+python3 -m unittest discover -s tests -p "test*.py" -v
 ```
 
 Результат:
